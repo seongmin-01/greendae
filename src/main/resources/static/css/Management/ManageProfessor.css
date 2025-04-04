@@ -1,0 +1,192 @@
+    /*메인*/
+    main {
+        width: 1400px;
+        height: auto;
+        display: flex;
+        margin: 0 auto;
+    }
+    main aside {
+        width: 270px;
+        height: auto;
+        flex-shrink : 0;
+        padding: 25px 30px;
+        background-color: #dadada;
+        box-sizing: border-box;
+    }
+    main aside img {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 3px;
+        right: 5px;
+    }
+    main aside h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
+    main aside a {
+        font-size: 14px;
+        margin-left: 25px;
+        line-height: 30px;
+    }
+    main aside div {
+        margin-bottom: 20px;
+    }
+
+    main .managemain {
+        width: 1130px;
+        padding-left: 20px;
+    }
+    main .managemain .managemaintop {
+        width: 100%;
+        height: auto;
+        display: flex;
+        border-bottom: 1px solid #C0C0C0;
+        padding: 10px 0;
+        margin:20px 0;
+    }
+    main .managemain .managemaintop h4 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .managemaintop > div {
+        height: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 870px;
+    }
+
+    .managemaintop > div > h3 {
+        font-size: 14px;
+    }
+
+    .managemaintop > div > h3:nth-of-type(2) {
+        color: #145074;
+    }
+
+    .managemaintop > div > img {
+        width: 5px;
+        height: 10px;
+    }
+
+    .managemain  div {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        margin-bottom: 15px;
+    }
+
+    .managemain  h3 {
+        margin-left: 8px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #145074;
+    } 
+
+    table {
+        width: 100%;
+        height: auto;
+        border-collapse: collapse;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    table tr, td {
+        padding: 10px;
+        border: 1px solid #E5E5E5;
+    }
+
+    .avatar {
+        width: 163px;
+        padding-left: 55px;
+    }
+
+    .table-1 span {
+        font-size: 13px;
+        color: #BC2E13;
+    }
+
+    .table-1 tr:first-child > td:nth-child(2n),
+    .table-1 tr:last-child > td:nth-child(2),
+    .table-1 tr:nth-child(2) > td:nth-child(2n-1),
+    .table-1 tr:nth-child(3) > td:nth-child(2n-1),
+    .table-1 tr:nth-child(4) > td:nth-child(2n-1) {
+        width: 163px;
+        min-height: 46px;
+        background-color: #FAFAFA;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    table input, select {
+        border: 1px solid #959595;
+        border-radius: 2px;
+        width: 150px;
+        height: 33px;
+        padding: 5px;
+        font-size: 13px;
+    }
+
+
+    .table-1  tr:nth-child(5) input {
+        margin-bottom: 3px;
+    }
+
+    .table-1 tr:nth-child(5) input:nth-of-type(2),
+    .table-1 tr:nth-child(5) input:nth-of-type(3) {
+        width: 400px;
+    }
+
+    .table-1 tr td:nth-child(2),
+    .table-1 tr td:nth-child(4) {
+       width: 300px;
+    }
+
+
+    .table-1 tr:nth-child(1) td:nth-child(5) > input,
+    .table-1 tr:nth-child(2) td:nth-child(4) > input {
+        width: 200px;
+     }
+
+     .table-1 td label input[type="radio"] {
+        width: 50px;
+        height: 19px;
+    }
+
+     button {
+        font-size: 13px;
+        text-align: center;
+        margin-left: 3px;
+        width: 60px;
+        height: 44px;
+        background-color: #1A528E;
+        color: #fff;
+    }
+    .table-2 td:nth-child(1),
+    .table-2 td:nth-child(3) {
+        width: 163.34px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: #FAFAFA;
+    }
+    
+    .form-btn {
+        margin-left: 1010px;
+        margin-bottom: 150px;
+        width: 100px;
+        height: 33px;
+        background-color: #1A528E;
+        border: #08305A;
+        color: #fff;
+    }
+  
+
+
+
+
+
+

@@ -1,0 +1,117 @@
+.notice {
+    width: 1200px;
+    margin: 0 auto; /* 가운데 정렬 원할 경우 */
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #bebebe;
+    text-align: center;
+    cursor: pointer;
+}
+
+#article > .view {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+#article > .view table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 2px solid #111;
+}
+#article > .view table caption{
+    text-align: left;
+    margin-bottom: 6px;
+}
+#article > .view table th {
+    width: 112px;
+    height: 50px;
+    background: #f5f8f9;
+    border-bottom: 1px solid #e9e9e9;
+}
+#article > .view table td {
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e9e9e9;
+}
+#article > .view table td > p {
+    line-height: 20px;
+}
+#article > .view table td > input {
+    font-size: 16px;
+    width: 400px;
+    height: 24px;
+    border: none;
+    padding-bottom: 10px;
+}
+#article > .view table td > textarea {
+    font-size: 16px;
+    width: 100%;
+    height: 280px;
+    resize: none;
+    border: none;
+}
+
+#article > .view > div {
+    text-align: right;
+    margin-top: 10px;
+}
+
+#article > .view > section {
+    width: 100%;
+    height: auto;
+    border: 1px solid #e3e3e3;
+    background: #f9f9f9;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 16px;
+}
+
+#article > .view > section > h3 {
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px dotted #111;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#article > .view > .commentList {}
+#article > .view > .commentList > article {overflow: hidden;}
+#article > .view > .commentList .nick {}
+#article > .view > .commentList .date {}
+#article > .view > .commentList .content {padding: 10px;}
+#article > .view > .commentList > article > div {float: right;}
+#article > .view > .commentList > article .remove {}
+#article > .view > .commentList > article .modify {}
+#article > .view > .commentList > .empty {
+    margin: 20px;
+    text-align: center;
+}
+
+#article > .view > .commentForm {
+    overflow: hidden;
+}
+#article > .view > .commentForm textarea {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #e4eaec;
+    padding: 6px;
+    box-sizing: border-box;
+    resize: none;
+}
+#article > .view > .commentForm div {
+    float: right;
+    margin-top: 10px;
+}
+
+
+.commentForm {
+    margin-bottom: 50px;
+}
+
+

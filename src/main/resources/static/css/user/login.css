@@ -1,0 +1,187 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    }
+    
+    ul,
+    ol {
+    list-style: none;
+    }
+    
+    a {
+    text-decoration: none;
+    color: #111;
+    }
+    
+    input,
+    textarea {
+    outline: none;
+    }
+    
+    #wrapper {
+    max-width: 1920px;
+    width: 100%;
+    height: auto;
+    }
+
+/* ================================================= */
+/*homebar*/
+.homebar {
+    width: 100%;
+    height: auto;
+    background-color: #ECF2F6;
+    margin-bottom: 60px;
+}
+.homebar .inline {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    text-align: right;
+    padding: 5px;
+}
+.homebar .inline img:nth-of-type(1) {
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(1) {
+    position: relative;
+    top: 2px;
+}
+.homebar .inline a:nth-of-type(2) {
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(3) {
+    margin-right: 10px;
+    margin-left: 8px;
+    position: relative;
+    bottom: 1px;
+    left: 2px;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    height: 600px;
+    margin: 0 auto;
+  
+}
+
+.content {
+    margin: 0 auto;
+    position: relative;
+    left: 7%;
+}
+/* ================================================= */
+.form-hd {
+    margin-top: 5px;
+}
+
+.form-hd > p {
+    color: #3f97f6;
+}
+
+.form-hd > p:nth-child(1) {
+    font-size: 20px;
+}
+
+.form-hd > p:nth-child(2) {
+    font-size: 15px;
+}
+
+
+/* ================================================= */
+
+.checkbox {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background-color: #dfdfdf;
+    border-radius: 24px;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+}
+
+div > li:nth-child(1) {
+    margin-right: 10px;
+}
+
+.checkbox:checked {
+    background-image: url(/static/images/bu_h5.png);
+    background-position: center;
+    background-color: white;
+    border: 1px solid #eee;
+}
+
+form {
+    width: 495px;
+    margin-top: 20px;
+}
+
+form > ul > div {
+    display: flex;
+    color: #333333;
+}
+
+form > ul {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form > ul > a {
+    color: #333333;
+}
+
+form > input {
+    width: 483px;
+    height: 47px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    padding-left: 10px;
+}
+
+.loginbtn {
+    width: 100%;
+    background-color: #3f97f6;
+    color: white;
+    border: none;
+}
+
+.registerbtn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.guide {
+    margin-top: -20px;
+}
+
+.guide > p:nth-child(1) {
+    color: #145074;
+    font-size: 18px;
+}
+
+.guide > p:nth-child(1) > img {
+    margin-right: 5px;
+}
+
+.guide > p {
+    font-size: 15px;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+
+.userRegister {
+
+}

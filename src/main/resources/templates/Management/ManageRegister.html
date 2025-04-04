@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <link rel="stylesheet" href="/css/Management/_manageheader.css">
+    <link rel="stylesheet" href="/css/Management/manageregister.css">
+    <link rel="stylesheet" href="/css/Management/_managefooter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="/js/ManageRegister.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/_adminHeader"/>
+        <main>
+            <th:block th:include="/common/_adminSide"/>
+            <div class="managemain">
+                <article class="managemaintop">
+                    <h4>강의등록</h4>
+                    <h3>학사운영 ><p> 강의 등록</p></h3>
+                </article>
+                <form class="register" th:action="@{/Management/ManageRegister}" method="post">
+                    <div class="info">
+                        <h4><img src="/images/bullet-h4.png" alt="h4">기본정보 입력</h4>
+                        <table class="basic">
+                            <tr>
+                                <th>과목코드</th>
+                                <td class="redtxt">
+                                    <input type="hidden" name="code" />
+                                    학과 코드+연도+학기+순번 조합 자동생성
+                                </td>
+                                <th>개설학과</th>
+                                <td>
+                                    <select class="university" onchange="updateDepartments()" id="collegeSelect">
+                                        <option value="">단과대학선택</option>
+                                        <th:block th:each="college : ${colleges}">
+                                            <option th:value="${college.collegeName}" th:text="${college.collegeName}"></option>
+                                        </th:block>
+                                    </select>
+                                    <select id="departmentSelect" name="departmentName">
+                                        <option value="">학과를 선택하세요</option>
+                                    </select>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>개설학년</th>
+                                <td>
+                                    <select id="grade" name="grade">
+                                        <option>1학년</option>
+                                        <option>2학년</option>
+                                        <option>3학년</option>
+                                        <option>4학년</option>
+                                    </select>
+                                </td>
+                                <th>학점</th>
+                                <td>
+                                    <select id="score" name="credit">
+                                        <option>1학점</option>
+                                        <option>2학점</option>
+                                        <option>3학점</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이수구분</th>
+                                <td>
+                                    <select id="selectmajor" name="division">
+                                        <option>전공 선택</option>
+                                        <option>전공 필수</option>
+                                        <option>교양 선택</option>
+                                        <option>교양 필수</option>
+                                        
+                                    </select>
+                                </td>
+                                <th>담당교수</th>
+                                <td>
+                                    <select class="dropdown" name="pro_name">
+                                        <option value="">선택</option>
+                                        <th:block th:each="prof : ${professors}">
+                                            <option th:value="${prof.name}" th:text="${prof.name}"></option>
+                                        </th:block>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강의명</th>
+                                <td colspan="3"><input type="text" name="lec_name" class="classname" placeholder="강좌명 입력"></td>
+                            </tr>
+                            <tr>
+                                <th>강의 설명</th>
+                                <td colspan="3"><input type="text" name="lec_info" class="explain" placeholder="강의 개요 및 목표, 학습 내용 등"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="stdinfo">
+                        <h4><img src="/images/bullet-h4.png" alt="h4">수업정보 입력</h4>
+                        <table>
+                            <tr>
+                                <th>수업 기간</th>
+                                <td colspan="3"><input type="date" name="startDate">~<input type="date" name="endDate"></td>
+                            </tr>
+                            <tr>
+                                <th>수업 시간</th>
+                                <td colspan="3" class="ckarea">
+                                    <input type="time" name="startTime">~<input type="time" name="endTime">
+                                    <label><input type="checkbox" class="ckbox" name="day" value="월"> 월</label>
+                                    <label><input type="checkbox" class="ckbox" name="day" value="화"> 화</label>
+                                    <label><input type="checkbox" class="ckbox" name="day" value="수"> 수</label>
+                                    <label><input type="checkbox" class="ckbox" name="day" value="목"> 목</label>
+                                    <label><input type="checkbox" class="ckbox" name="day" value="금"> 금</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>평가방식</th>
+                                <td colspan="3"><input type="text" name="evaluation" placeholder="출석 10%, 과제 30%, 시험 60%" class="how"></td>
+                            </tr>
+                            <tr>
+                                <th>교재</th>
+                                <td colspan="3"><input type="text" name="book" placeholder="출판사 - 도서명 - 저자 입력" class="book"></td>
+                            </tr>
+                            <tr>
+                                <th>강의실</th>
+                                <td><input type="text" name="classroom" placeholder="인문관 301호" class="room"></td>
+                                <th>최대 수강인원</th>
+                                <td><input type="text" name="people_num"></td>
+                            </tr>
+                        </table>
+
+                        <input type="submit" value="등록" class="button">
+                    </div>
+
+                    
+                </form>
+
+                 
+            </div>
+            </main>
+        <th:block th:include="/common/_adminFooter"/>
+        </div>
+    <script>
+        document.getElementById("collegeSelect").addEventListener("change", function () {
+            const selectedCollege = this.value;
+
+            fetch(`/api/departments/by-college?collegeName=${encodeURIComponent(selectedCollege)}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("받은 데이터", data);  // 여기에 ["영어영문학과", "행정학과"] 등 나와야 함
+                    const departmentSelect = document.getElementById("departmentSelect");
+                    departmentSelect.innerHTML = '<option>학과를 선택하세요</option>';
+
+                    data.forEach(deptName => {
+                        const option = document.createElement("option");
+                        option.value = deptName;
+                        option.text = deptName;
+                        departmentSelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error("에러 발생", error);
+                });
+        });
+        document.getElementById('departmentSelect').addEventListener('change', function () {
+            const departmentName = this.value;
+
+            fetch(`/api/professors/generate-id?departmentName=${encodeURIComponent(departmentName)}`)
+            console.log(departmentName)
+                .then(res => res.json())
+                .then(data => {
+                    // 여기서 input[name='id']와 #professorIdDisplay를 업데이트
+                    document.querySelector("input[name='id']").value = data;
+                    document.getElementById("professorIdDisplay").textContent = data;
+                })
+                .catch(err => console.error('ID 생성 오류:', err));
+        });
+
+    </script>
+    </body>
+
+    </html>

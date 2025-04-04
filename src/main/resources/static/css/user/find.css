@@ -1,0 +1,165 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+#wrapper {
+    max-width: 1920px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/*homebar*/
+.homebar {
+    width: 100%;
+    height: auto;
+    background-color: #ECF2F6;
+    margin-bottom: -6px;
+}
+.homebar .inline {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    text-align: right;
+    padding: 5px;
+}
+.homebar .inline img:nth-of-type(1) {
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(1) {
+    position: relative;
+    top: 2px;
+}
+.homebar .inline a:nth-of-type(2) {
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(3) {
+    margin-right: 10px;
+    margin-left: 8px;
+    position: relative;
+    bottom: 1px;
+    left: 2px;
+}
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/* main */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    margin-top: 40px;
+    margin-bottom:40px ;
+}
+.content {
+    width: 600px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 폼 헤더 */
+.form-header h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #cccccc;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* 폼 박스 영역 */
+.form-box {
+    margin-top: 20px;
+}
+.info-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* 입력 그룹 */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.input-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+.input-group input {
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+.input-group button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.input-group button:hover {
+    background-color: #0056b3;
+}
+
+.auth-group {
+    display: none; /* 처음에 숨김 */
+}
+
+.authResult {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* 제출 버튼 */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-button:hover {
+    background-color: #218838;
+}
+
+

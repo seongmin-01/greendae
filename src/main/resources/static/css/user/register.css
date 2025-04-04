@@ -1,0 +1,258 @@
+    /* 초기화 */
+    * {
+        margin: 0;
+        padding: 0;
+        font: normal 12px "Noto Sans Korean", sans-serif;
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+    }
+
+    ul,
+    ol {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #111;
+    }
+
+    input,
+    textarea {
+        outline: none;
+    }
+
+    #wrapper {
+        max-width: 1920px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*homebar*/
+ .homebar {
+    width: 100%;
+    height: auto;
+    background-color: #ECF2F6;
+    margin-bottom: 60px;
+}
+.homebar .inline {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    text-align: right;
+    padding: 5px;
+}
+.homebar .inline img:nth-of-type(1) {
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(1) {
+    position: relative;
+    top: 2px;
+}
+.homebar .inline a:nth-of-type(2) {
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(3) {
+    margin-right: 10px;
+    margin-left: 8px;
+    position: relative;
+    bottom: 1px;
+    left: 2px;
+}
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+/*메인*/
+main {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+main .textarea {
+    width: 990px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+main .textarea h4 {
+    color: #3F97F6;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+main .textarea p {
+    color: #3F97F6;
+    font-size: 16px;
+}
+
+main .termsarea {
+    width: 990px;
+    height: auto;
+    margin: 0 auto;
+    border-top: 2px solid #071F4B;
+}
+main .termsarea table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+main .termsarea table tr th{
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    width: 198px;
+    height: 65px;
+    background-color: #f4f8fc;
+}
+main .termsarea table tr td{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 792px;
+    min-height: 65px;
+    padding: 7px 10px;
+    border-bottom: 1px solid #dedede;
+    align-items: center;
+}
+
+.address-row td {
+    height: 155px;
+    display: block;
+}
+
+.address-container {
+    display: block;
+}
+
+.address-row td {
+    min-height: 155px;
+}
+
+
+main .register{
+    width: 308.8px;
+    height: 39px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.ex{
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+.star{
+    color: red;
+    display: contents;
+    margin-left: 5px;
+}
+
+.address-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px; /* 요소 간격 */
+    flex-direction: column;
+}
+
+.address-container .zipcode-btn {
+    font-size: 14px;
+    line-height: 100%;
+    width: 110px;
+    height: 39px;
+    padding: 7px 12px;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    color: #757575;
+}
+
+#btnCheckUid, #btnSendEmail, #btnAuthEmail{
+    height: 51px;
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    background: #3F97F6;
+}
+
+    #registerbtn{
+        margin-left: 3px;
+        height: 51px;
+        padding: 10px;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        background: #3F97F6;
+    }
+
+    .uidResult,.passResult,.hpResult, .emailResult {
+        line-height: 51px; /* 버튼과 높이를 맞추려면 */
+        display: inline-block;
+        font-size: 14px;
+    }
+
+.address-container .register.zip {
+    font-size: 14px;
+    width: 463.19px; /* 기본 입력창 크기 */
+    height: 39px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+    .auth {
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .emailtop{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+.pagebtn {
+    display: flex;
+    justify-content: flex-end;
+    width: 990px;
+    margin: 0 auto;
+    height: auto;
+}
+.cancle {
+    background-color: #8B8B8B;
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    display: flex;              /* Flex 컨테이너로 변경 */
+    justify-content: center;    /* 가로 중앙 정렬 */
+    align-items: center;
+}
+.cancle a {
+    box-sizing: border-box;
+    margin-top: 1px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+.next {
+    background-color: #3F97F6;
+    padding: 10px 13px;
+    color: white;
+    margin-left: 3px;
+}
+.next button {
+    all: unset;
+    cursor: pointer;
+}
+
+
+
+
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/

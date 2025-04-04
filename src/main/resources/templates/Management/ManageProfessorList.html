@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <link rel="stylesheet" href="/css/Management/_manageheader.css">
+    <link rel="stylesheet" href="/css/Management/ManageProfessorList.css">
+    <link rel="stylesheet" href="/css/Management/_managefooter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/_adminHeader"/>
+        <main>
+            <th:block th:include="/common/_adminSide"/>
+            <div class="managemain">
+                <article class="managemaintop">
+                    <h4>교수 목록</h4>
+                    <h3>인사관리 ><p>교수 목록</p></h3>
+                </article>
+                <div class="firsttb">
+                  <div class="search">
+                      <form th:action="@{/Management/ManageProfessorList}">
+                          <div class="searchbtn">
+                            <select class="dropdown" name="condition">
+                                <option value="">검색조건</option>
+                                <option value="id">교수번호</option>
+                                <option value="name">이름</option>
+                                <option value="jumin">주민번호</option>
+                                <option value="phone">휴대폰</option>
+                                <option value="email">이메일</option>
+                                <option value="departmentName">학과</option>
+                                <option value="position">직위</option>
+                                <option value="employStatus">재직여부</option>
+                                <option value="appointmentDate">임용일</option>
+                            </select>
+                            <input type="text" name="keyword" placeholder="검색어를 입력해 주세요">
+                            <button type="submit">검색</button>
+                        </div>
+                      </form>
+                    </div>
+                    <table>
+                            <tr>
+                               <th>교수번호</th>
+                               <th>이름</th>
+                               <th>주민번호</th>
+                               <th>휴대폰</th>
+                               <th>이메일</th>
+                               <th>학과</th>
+                               <th>직위</th>
+                               <th>재직여부</th>
+                               <th>임용일</th>
+                            </tr>
+
+                            <tr th:each="prof : ${professors}">
+                                <td>[[${prof.id}]]</td>
+                                <td>[[${prof.name}]]</td>
+                                <td>[[${prof.jumin}]]</td>
+                                <td>[[${prof.phone}]]</td>
+                                <td>[[${prof.email}]]</td>
+                                <td>[[${prof.departmentName}]]</td>
+                                <td>[[${prof.spot}]]</td>
+                                <td class="status">[[${prof.employStatus}]]</td>
+                                <td>[[${prof.appointmentDate}]]</td>
+                            </tr>
+                    </table>
+                    <article class="pagebtn">
+                        <!-- 첫 페이지 -->
+                        <a th:href="@{/Management/ManageProfessorList(page=0, size=${page.size}, condition=${condition}, keyword=${keyword})}">
+                            <img src="/images/btn-first-page.png" alt="first">
+                        </a>
+
+                        <!-- 이전 페이지 -->
+                        <a th:href="@{/Management/ManageProfessorList(page=${page.number - 1}, size=${page.size}, condition=${condition}, keyword=${keyword})}"
+                           th:classappend="${!page.hasPrevious()} ? 'disabled'"
+                           th:if="${page.hasPrevious()}">
+                            <img src="/images/btn-prev-page.png" alt="prev">
+                        </a>
+                        <span th:unless="${page.hasPrevious()}">
+                            <img src="/images/btn-prev-page.png" alt="prev">
+                        </span>
+
+                        <!-- 페이지 숫자 -->
+                        <span th:each="i : ${#numbers.sequence(0, page.totalPages - 1)}">
+                            <a th:href="@{/Management/ManageProfessorList(page=${i}, size=${page.size}, condition=${condition}, keyword=${keyword})}"
+                               th:text="${i + 1}"
+                               th:classappend="${page.number == i} ? 'active'">
+                            </a>
+                        </span>
+
+                        <!-- 다음 페이지 -->
+                        <a th:href="@{/Management/ManageProfessorList(page=${page.number + 1}, size=${page.size}, condition=${condition}, keyword=${keyword})}"
+                           th:if="${page.hasNext()}">
+                            <img src="/images/btn-next-page.png" alt="next">
+                        </a>
+                        <span th:unless="${page.hasNext()}">
+                            <img src="/images/btn-next-page.png" alt="next">
+                        </span>
+
+                        <!-- 마지막 페이지 -->
+                        <a th:href="@{/Management/ManageProfessorList(page=${page.totalPages - 1}, size=${page.size}, condition=${condition}, keyword=${keyword})}">
+                            <img src="/images/btn-last-page.png" alt="last">
+                        </a>
+
+                        <!-- 등록 버튼 -->
+                        <a class="button" th:href="@{/Management/ManageProfessor}"
+                           style="padding: 6px 33px;
+              position: relative;
+              left: 355px;
+              background-color: #1A528E;
+              border: 1px solid #08305A;
+              color: white;">
+                            등록
+                        </a>
+                    </article>
+                </div> 
+            </div>
+            </main>
+        <th:block th:include="/common/_adminFooter"/>
+        </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const rows = document.querySelectorAll("table tr");
+
+            rows.forEach((row) => {
+                const statusCell = row.querySelector('.status'); // ✔ 해당 row 안에서 상태 셀 찾기
+                if (!statusCell) return;
+
+                const status = statusCell.innerText.trim();
+
+                // 상태에 따라 색상 변경
+                switch (status) {
+                    case "재직중":
+                        statusCell.style.color = "green";
+                        break;
+                    case "휴직중":
+                        statusCell.style.color = "orange";
+                        break;
+                    case "퇴직":
+                        statusCell.style.color = "blue";
+                        break;
+                }
+            });
+        });
+    </script>
+    </body>
+
+    </html>

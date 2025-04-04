@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/Bachelor/BacSchedule.css}">
+    <script src="/js/BacSchedule.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+    <div class="homebar">
+        <article class="inline">
+            <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+            <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+            <a th:href="@{/Bachelor/BacNotice}">학사안내</a>
+            <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+            <a th:href="@{/Bachelor/BacSchedule}">학사일정</a>
+        </article>
+    </div>
+    <main>
+        <article class="side">
+            <h4>학사안내</h4>
+            <ul>
+                <li><a th:href="@{/Bachelor/BacNotice}">공지사항</a></li>
+                <li><a th:href="@{/Bachelor/BacSchedule}">학사일정</a></li>
+                <li><a th:href="@{/Bachelor/BacSubscribe}">수강신청</a></li>
+                <li><a th:href="@{/Bachelor/BacResult}">성적</a></li>
+                <li><a th:href="@{/Bachelor/BacGrad}">수료 및 졸업</a></li>
+                <li><a th:href="@{/Bachelor/BacQuestion}">자주묻는질문</a></li>
+            </ul>
+        </article>
+        <article class="schedule">
+            <div class="scheduletop">
+                <h4>학사일정</h4>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <img th:src="@{/images/btn-calendar-prev.gif}" id="prev-btn" class="nav-btn"> <!-- 좌측 화살표 -->
+                    <span id="month-year"></span>
+                    <img th:src="@{/images/btn-calendar-next.gif}" id="next-btn" class="nav-btn"> <!-- 우측 화살표 -->
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                    <!-- 날짜가 여기에 추가됨 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</div>
+        </article>
+    </main>
+    <th:block th:include="/common/__footer"/>
+</div>
+</body>
+
+</html>

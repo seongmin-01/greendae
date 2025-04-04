@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+이름 : 김소현
+내용 : 커뮤니티 검색
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3조 - 그린대학교</title>
+        <th:block th:include="/_headerLink"/>
+        <link rel="stylesheet" href="/css/Community/notice.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <th:block th:include="/common/__header"/>
+            <div class="homebar">
+                <article class="inline">
+                    <a href="/main"><img src="/images/ico-home.png" alt="homeico"></a>
+                    <img src="/images/bg-path-arrow.png" alt="arrowright">
+                    <a href="/Community/notice">커뮤니티</a>
+                    <img src="/images/bg-path-arrow.png" alt="arrowright">
+                    <a href="/Community/notice">공지사항</a>
+                </article>
+            </div>
+            <main>
+                <article class="side">
+                    <h4>커뮤니티</h4>
+                        <ul>
+                            <li class="on"><a href="/Community/notice" class="on">공지사항</a></li>
+                            <li><a href="/Community/news">뉴스 및 칼럼</a></li>
+                            <li><a href="/Community/job">취업정보</a></li>
+                            <li><a href="/Community/free">자유게시판</a></li>
+                            <li><a href="/Community/qa">질문과 답변</a></li>
+                            <li><a href="/Community/resource">자료실</a></li>
+                        </ul>
+                </article>
+                <article class="notice">
+                    <div class="noticetop">
+                        <h4>공지사항</h4>
+                    </div>
+                    <form th:action="@{/Community/searchNotice}" class="search">
+                        <select class="dropdown" name="searchType">
+                            <option value="all">전체</option>
+                            <option value="title" th:selected="${pageResponseDTO.searchType == 'title'}">제목</option>
+                            <option value="content" th:selected="${pageResponseDTO.searchType == 'content'}">내용</option>
+                            <option value="writer" th:selected="${pageResponseDTO.searchType == 'writer'}">작성자</option>
+                        </select>
+                        <input type="text" name="keyword" placeholder="검색어를 입력해 주세요">
+                        <button class="searchbtn">검색</button>
+                    </form>
+                    <div class="noticemain">
+                        <table>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>작성일</th>
+                                <th>조회</th>
+                            </tr>
+                            <tr th:each="community, i:${pageResponseDTO.dtoList}">
+                                <td>
+                                    <a th:href="@{/Community/view1(no=${community.no}, cate=${community.cate})}">
+                                        <th:block th:if="${i.index < 3}">
+                                            <img src="/images/ico-new01.gif" alt="new" style="width:16px; height:16px; margin-right:4px;">
+                                        </th:block>
+                                        [[${community.title}]]&#91;[[${community.comment}]]&#93;
+                                    </a>
+                                </td>
+                                <td><a th:href="@{/Community/view1(no=${community.no}, cate=${community.cate})}">[[${community.title}]]&#91;[[${community.comment}]]&#93;</a></td>
+                                <td>[[${community.name}]]</td>
+                                <td>[[${community.wdate}]]</td>
+                                <td>[[${community.hit}]]</td>
+                            </tr>
+                        </table>
+                        <a th:href="@{/Community/write1(cate=${pageResponseDTO.cate})}" class="write">글쓰기</a>
+                        <article class="pagebtn">
+                            <th:block th:if="${pageResponseDTO.prev}">
+                                <a th:href="@{/Community/searchNotice(pg=${pageResponseDTO.start-1})}" class="prev">이전</a>
+                            </th:block>
+
+                            <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+                                <a th:href="@{/Community/searchNotice(pg=${num})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
+                            </th:block>
+
+                            <th:block th:if="${pageResponseDTO.next}">
+                                <a th:href="@{/Community/searchNotice(pg=${pageResponseDTO.end+1})}" class="next">다음</a>
+                            </th:block>
+                        </article>
+                    </div>
+                </article>
+            </main>
+            <th:block th:include="/common/__footer"/>
+        </div>
+    </body>
+</html>

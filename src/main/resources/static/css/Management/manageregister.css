@@ -1,0 +1,174 @@
+
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*메인*/
+    main {
+        width: 100%;
+        max-width: 1400px;
+        height: auto;
+        display: flex;
+        margin: 0 auto;
+    }
+    main aside {
+        flex-basis: 270px;
+        flex-grow: 0;
+        height: auto;
+        padding: 25px 30px;
+        background-color: #dadada;
+    }
+    main aside img {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 3px;
+        right: 5px;
+    }
+    main aside h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
+    main aside a {
+        font-size: 14px;
+        margin-left: 25px;
+        line-height: 30px;
+    }
+    main aside div {
+        margin-bottom: 20px;
+    }
+
+    main .managemain {
+        width: 1130px;
+        height: auto;
+        flex-grow: 1;
+        padding: 20px;
+        padding-right: 0;
+    }
+    main .managemain .managemaintop {
+        width: 100%;
+        height: auto;
+        display: flex;
+        border-bottom: 1px solid #C0C0C0;
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+    main .managemain .managemaintop h4 {
+        font-size: 20px;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    main .managemain .managemaintop h3 {
+        font-size: 14px;
+        display: flex;
+        margin-left: auto;
+    }
+    main .managemain .managemaintop h3 p {
+        font-size: 14px;
+        color: #333333;
+        margin-left: 10px;
+    }
+    main .managemain .managemaintop h3 p:last-of-type {
+        color: #145074;
+    }
+
+    main .managemain div h4 {
+        font-size: 18px;
+        color: #145074;
+        margin-bottom: 8px;
+        margin-top: 15px;
+    }
+    main .managemain div img {
+        margin-right: 5px;
+    }
+
+    main .managemain .info {
+        width: 100%;
+    }
+    table {
+        width: 100%;
+        height: auto;
+        border-top: 2px solid #8798A3;
+        border-collapse: collapse;
+    }
+    table th {
+        background-color: #FAFAFA;
+        border: 1px solid #E5E5E5;
+        width: 217px;
+        height: 48px;
+        font-size: 13px;
+    }
+    table td {
+        border: 1px solid #E5E5E5;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 13px;
+    }
+    .redtxt {
+        color: #BC2E13;
+    }
+    table input {
+        color: #333333;
+        width: 150px;
+        height: 33px;
+        border: 1px solid #959595;
+    }
+    table select {
+        color: #333;
+        width: 150px;
+        height: 35px;
+        border: 1px solid #959595;
+    }
+    table select option{
+        color: #333;
+    }
+    .classname {
+        width: 426px;
+        height: 33px;
+        padding-left: 5px;
+    }
+    .explain {
+        width: 426px;
+        height: 126px;
+        padding-left: 5px;
+    }
+    .ckbox {
+        width: 13px;
+        height: 13px;
+        border: 1px solid #767676;
+        position: relative;
+        top: 2px;
+    }
+    label {
+        position: relative;
+        top: 10px;
+        font-size: 13px;
+    }
+    .how {
+        width: 450px;
+        height: 33px;
+    }
+    .book {
+        width: 450px;
+        height: 33px;
+    }
+    .room {
+        width: 220px;
+        height: 33px;
+    }
+    
+    .stdinfo input {
+        padding-left: 5px;
+        color: #757575;
+    }
+    .stdinfo .button {
+        float: right;
+        width: 100px;
+        height: 33px;
+        background-color: #1A528E;
+        border: 1px solid #08305A;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3조 - 그린대학교</title>
+        <th:block th:include="/_headerLink"/>
+        <link rel="stylesheet" href="/css/life/meal.css">
+        <script src="/js/meal.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <th:block th:include="/common/__header"/>
+            <div class="homebar">
+                <article class="inline">
+                    <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/life/council}">대학생활</a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/life/meal}">식단 안내</a>
+
+                </article>
+            </div>
+            <main>
+                <aside>
+                    <p class="list-hadding">대학생활</p>
+                    <ul class="list">
+                        <li><a th:href="@{/life/council}">학생회 소개</a></li>
+                        <li><a th:href="@{/life/study}">동아리/스터디</a></li>
+                        <li style="background-color: #3F97F6;"><a style="color: white;" th:href="@{/life/meal}">식단안내</a></li>
+                        <li><a th:href="@{/life/galary}">갤러리</a></li>
+                    </ul>
+                </aside>
+                <section class="content">
+                    <span>식단안내</span>
+                    <article>
+                        <div class="meal_date">
+                            <img th:src="@{/images/btn-calendar-prev.gif}" class="nav-btn" onclick="prevWeek()">
+                            <h2 th:text="${mealDateRange}">2025.03.10 ~ 2025.03.14</h2>
+                            <img th:src="@{/images/btn-calendar-next.gif}" class="nav-btn" onclick="nextWeek()">
+                        </div>
+                        <table class="meal_table">
+                            <thead>
+                            <tr>
+                                <th>구분</th>
+                                <!-- meals 리스트를 날짜순으로 반복하며 헤더를 출력 -->
+                                <th th:each="meal : ${meals}"
+                                    th:text="${#temporals.format(meal.mealDate, 'yyyy.MM.dd(E)')}"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- 조식 행 -->
+                            <tr>
+                                <td>조식</td>
+                                <td th:each="meal : ${meals}"
+                                    th:text="${meal.morning != null ? meal.morning : '미운영'}">
+                                    미운영
+                                </td>
+                            </tr>
+                            <!-- 중식 행 -->
+                            <tr>
+                                <td>중식<br>11:00 ~ 15:00</td>
+                                <td th:each="meal : ${meals}">
+                                    <!-- 초록색 박스: luPrice가 있을 때만 한 번만 출력 -->
+                                    <div th:if="${meal.luPrice != null}" class="price-box"
+                                         th:text="${meal.luPrice} + '원'">
+                                    </div>
+                                    <br/>
+                                    <!-- 메뉴 문자열: 콤마(,)를 <br>로 치환하여 출력 -->
+                                    <div th:if="${meal.lunch != null}"
+                                         th:utext="${#strings.replace(meal.lunch, ',', '<br/>')}">
+                                    </div>
+                                    <div th:if="${meal.lunch == null}">
+                                        미운영
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- 석식 행 -->
+                            <tr>
+                                <td>석식</td>
+                                <td th:each="meal : ${meals}"
+                                    th:text="${meal.dinner != null ? meal.dinner : '미운영'}">
+                                    미운영
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="greeting">※ 항상 그린식당을 이용해 주셔서 감사합니다.</div>
+                    </article>
+                </section>
+            </main>
+            <th:block th:inclcude="/common/__footer"/>
+        </div>
+    </body>
+</html>

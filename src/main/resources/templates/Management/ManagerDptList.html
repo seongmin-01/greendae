@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <link rel="stylesheet" href="/css/Management/_manageheader.css">
+    <link rel="stylesheet" href="/css/Management/ManageEducation.css">
+    <link rel="stylesheet" href="/css/Management/_managefooter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/_adminHeader"/>
+        <main>
+            <th:block th:include="/common/_adminSide"/>
+
+            <div class="managemain">
+                <article class="managemaintop">
+                    <h4>학과 목록</h4>
+                    <h3>대학 및 학과 ><p>학과 목록</p></h3>
+                </article>
+                <div class="firsttb">
+                    <form>
+                      <div class="search">
+                            <select class="dropdown" name="condition">
+                                <option>검색조건</option>
+                                <option value="no">학과번호</option>
+                                <option value="college_name">단과대학</option>
+                                <option value="departmentName">학과</option>
+                                <option value="proName">학과장</option>
+                                <option value="dep_number">학과 연락처</option>
+                            </select>
+                            <input type="text" name="keyword" placeholder="키워드 입력">
+                            <div class="searchbtn">
+                                <button type="submit" style="color: white">검색</button>
+                            </div>
+                        </div>
+                    </form>
+                        <table>
+                                <tr>
+                                    <td>학과번호</td>
+                                    <td>단과대학</td>
+                                    <td>학과</td>
+                                    <td>학과장</td>
+                                    <td>학과 연락처</td>
+                                    <td>소속 교수 수</td>
+                                    <td>소속 학생 수</td>
+                                    <td>개설 강의 수</td>
+                                </tr>
+                                <tr th:each="dept : ${departments}">
+                                    <td th:text="${dept.no}"></td>
+                                    <td th:text="${dept.college.collegeName}"></td>
+                                    <td th:text="${dept.departmentName}"></td>
+                                    <td th:text="${dept.proName}"></td>
+                                    <td th:text="${dept.office}"></td>
+                                    <td th:text="${#lists.size(dept.professors)}"></td>
+                                    <td th:text="${#lists.size(dept.student)}"></td>
+                                    <td th:text="${dept.lecture != null ? 1 : 0}"></td> <!-- 또는 연관된 강의 수가 여러 개면 수정 필요 -->
+                                </tr>
+                        </table>
+                    <article class="pagebtn">
+
+                        <!-- 첫 페이지 -->
+                        <a th:href="@{/Management/ManagerDptList(page=0, size=${page.size}, condition=${condition}, keyword=${keyword})}">
+                            <img src="/images/btn-first-page.png" alt="first">
+                        </a>
+
+                        <!-- 이전 페이지 -->
+                        <a th:if="${page.hasPrevious()}"
+                           th:href="@{/Management/ManagerDptList(page=${page.number - 1}, size=${page.size}, condition=${condition}, keyword=${keyword})}">
+                            <img src="/images/btn-prev-page.png" alt="prev">
+                        </a>
+                        <span th:unless="${page.hasPrevious()}">
+                            <img src="/images/btn-prev-page.png" alt="prev">
+                        </span>
+
+                        <!-- 페이지 숫자 -->
+                        <span th:each="i : ${#numbers.sequence(0, page.totalPages - 1)}">
+                            <a th:href="@{/Management/ManagerDptList(page=${i}, size=${page.size}, condition=${condition}, keyword=${keyword})}"
+                               th:text="${i + 1}"
+                               th:classappend="${page.number == i} ? 'active'">
+                            </a>
+                        </span>
+
+                        <!-- 다음 페이지 -->
+                        <a th:if="${page.hasNext()}"
+                           th:href="@{/Management/ManagerDptList(page=${page.number + 1}, size=${page.size}, condition=${condition}, keyword=${keyword})}">
+                            <img src="/images/btn-next-page.png" alt="next">
+                        </a>
+                        <span th:unless="${page.hasNext()}">
+                            <img src="/images/btn-next-page.png" alt="next">
+                        </span>
+
+                        <!-- 마지막 페이지 -->
+                        <a th:href="@{/Management/ManagerDptList(page=${page.totalPages - 1}, size=${page.size}, condition=${condition}, keyword=${keyword})}">
+                            <img src="/images/btn-last-page.png" alt="last">
+                        </a>
+
+                    </article>
+                    </div>
+
+                </div>
+                <a class="button" th:href="@{/Management/ManageDepartRegist}"
+                   style="padding: 6px 33px;
+              position: relative;
+             top: 744px;
+             left: -90px;
+             width: 30px;
+             height: 20px;
+              background-color: #1A528E;
+              border: 1px solid #08305A;
+              color: white;">
+                    등록
+                </a>
+                </div>
+            </main>
+        <th:block th:include="/common/_adminFooter"/>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/Bachelor/BacNotice.css}">
+</head>
+
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+    <div class="homebar">
+        <article class="inline">
+            <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+            <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+            <a th:href="@{/Bachelor/BacNotice}">학사안내</a>
+            <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+            <a th:href="@{/Bachelor/BacNotice}">공지사항</a>
+        </article>
+    </div>
+    <main>
+        <article class="side">
+            <h4>학사안내</h4>
+            <ul>
+                <li><a th:href="@{/Bachelor/BacNotice}">공지사항</a></li>
+                <li><a th:href="@{/Bachelor/BacSchedule}">학사일정</a></li>
+                <li><a th:href="@{/Bachelor/BacSubscribe}">수강신청</a></li>
+                <li><a th:href="@{/Bachelor/BacResult}">성적</a></li>
+                <li><a th:href="@{/Bachelor/BacGrad}">수료 및 졸업</a></li>
+                <li><a th:href="@{/Bachelor/BacQuestion}">자주묻는질문</a></li>
+            </ul>
+        </article>
+        <article class="notice">
+            <div class="noticetop">
+                <h4>공지사항</h4>
+            </div>
+            <div class="search">
+                <select class="dropdown">
+                    <option>전체</option>
+                    <option>제목</option>
+                    <option>작성자</option>
+                    <option>내용</option>
+                </select>
+                <input type="text" placeholder="검색어를 입력해 주세요">
+                <div class="searchbtn">
+                    <a href="">검색</a>
+                </div>
+            </div>
+            <div class="noticemain">
+                <table>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회</th>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img th:src="@{/images/ico-new01.gif}" alt="iconew">2025학년도 신입학 3차 추가모집 모집요강 및 모집...</td>
+                        <td>담당자</td>
+                        <td>24.04.09</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="/images/ico-new01.gif" alt="iconew">2025학년도 신입학 2차 추가모집 모집요강 및 모집...</td>
+                        <td>담당자</td>
+                        <td>24.04.09</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2025학년도 신입학 추가모집 모집요강 및 모집인원 공지</td>
+                        <td>담당자</td>
+                        <td>24.04.09</td>
+                        <td>160</td>
+                    </tr>
+                </table>
+                <article class="pagebtn">
+                    <a href=""><img th:src="@{/images/btn-first-page.png}" alt="firstarr"></a>
+                    <a href=""><img th:src="@{/images/btn-prev-page.png}" alt="firstarr"></a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href=""><img th:src="@{/images/btn-next-page.png}" alt="firstarr"></a>
+                    <a href=""><img th:src="@{/images/btn-last-page.png}" alt="firstarr"></a>
+                </article>
+            </div>
+        </article>
+    </main>
+    <th:block th:include="/common/__footer"/>
+</div>
+
+</body>
+</html>

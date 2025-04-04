@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" href="/css/support/academicList.css">
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/__header"/>
+
+        <div class="homebar">
+            <article class="inline">
+                <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/Support/CourseRegister}">학생지원</a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/Support/academicList}">학적</a>
+            </article>
+        </div>
+
+        <main>
+            <aside class="side">
+                <p class="list-hadding">학생지원</p>
+                <ul class="list">
+                    <li><a th:href="@{/Support/CourseRegister}">수강신청</a></li>
+                    <li><a th:href="@{/Support/courseList}">수강신청내역</a></li>
+                    <li><a th:href="@{/Support/curriculumList}">나의교과과정</a></li>
+                    <li><a th:href="@{/Support/GradeList}">성적조회</a></li>
+                    <li style="background-color: #3F97F6;"><a style="color: white;" th:href="@{/Support/academicList}">학적</a></li>
+                </ul>
+            </aside>
+
+            <article>
+                <div class="academic">
+                    <p>학적</p>
+                </div>
+                <div class="table-head">
+                    <img src="/images/bullet-h4.png" alt="기본정보">기본정보
+                </div>
+
+                <table class="table-1">
+                    <tr>
+                        <td class="img" rowspan="5"><img src="/images/icon-avatar.png" alt=""></td>
+                        <td class="td-hd">학번</td>
+                        <td >202001230</td>
+                        <td class="td-hd">학과</td>
+                        <td>컴퓨터공학과</td>
+                    </tr>
+                    <tr>
+                        <td class="td-hd">이름</td>
+                        <td>홍길동</td>
+                        <td class="td-hd">주민번호</td>
+                        <td>222222</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-hd">휴대폰</td>
+                        <td>010-1234-1001</td>
+                        <td class="td-hd">이메일</td>
+                        <td>@naver.com</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-hd">학년/학기</td>
+                        <td>3학년/1학기</td>
+                        <td class="td-hd">상태</td>
+                        <td>재학중</td>
+                    </tr>
+                </table>
+
+                <div class="table-head">
+                    <img src="/images/bullet-h4.png" alt="취득학점">취득학점현황
+                </div>
+
+                <table class="table-2">
+                    <tr>
+                        <th>구분</th>
+                        <th>전공(7)</th>
+                        <th>교양(6)</th>
+                        <th>선택(1)</th>
+                        <th>사회봉사</th>
+                        <th>기타</th>
+                        <th>총취득학점</th>
+                        <th>졸업요건학점</th>
+                    </tr>
+                    <tr>
+                        <td>취득학점</td>
+                        <td>21</td>
+                        <td>16</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>40</td>
+                        <td>130</td>
+                    </tr>
+                </table>
+
+                <p class="p-nb">- 각 괄호안의 숫자는 이수 과목수</p>
+
+                <div class="table-head">
+                    <img src="/images/bullet-h4.png" alt="년도/학기별 취득학점현황">년도/학기별 취득학점현황
+                </div>
+
+                <table class="table-3">
+                    <tr>
+                        <th>년도</th>
+                        <th>학년</th>
+                        <th>학기</th>
+                        <th>신청학점</th>
+                        <th>전공학점</th>
+                        <th>선택학점</th>
+                        <th>기타학점</th>
+                        <th>총취득학점</th>
+                        <th>평점평균</th>
+                        <th>기타</th>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>15</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>18</td>
+                        <td>3.2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>18</td>
+                        <td>15</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>18</td>
+                        <td>3.2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>18</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>18</td>
+                        <td>4.2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>18</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>18</td>
+                        <td>4.2</td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </article>
+        </main>
+
+        <th:block th:inclcude="/common/__footer"/>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+ /* 초기화 */
+ * {
+    margin: 0;
+    padding: 0;
+    font: normal 16px "Noto Sans Korean", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+#wrapper {
+    max-width: 1920px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* -------------------------------------------------------------------- */
+
+.homebar {
+    width: 100%;
+    height: auto;
+    background-color: #ECF2F6;
+    margin-bottom: 60px;
+}
+.homebar .inline {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    text-align: right;
+    padding: 5px;
+}
+.homebar .inline img:nth-of-type(1) {
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(1) {
+    position: relative;
+    top: 2px;
+}
+.homebar .inline a:nth-of-type(2) {
+    margin-right: 10px;
+    position: relative;
+    bottom: 1px;
+    margin-left: 8px;
+}
+.homebar .inline a:nth-of-type(3) {
+    margin-right: 10px;
+    margin-left: 8px;
+    position: relative;
+    bottom: 1px;
+    left: 2px;
+}
+
+/* ----------------------------------------------------------------------- */
+ /*메인*/
+ main {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+/*사이드*/
+aside {
+    width: 210px;
+    height: 302px;
+}
+
+aside > p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.list-hadding {
+    font-size: 32px;
+    color: #222222;
+}
+
+.list {
+    width: 210px;
+    height: 60px;
+    margin-top: 15px;
+    
+}
+
+.list > li:nth-child(1) {
+    border-top: 2px solid #222222;
+}
+
+.list > li {
+    margin-top: 2px;
+    padding-left: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 60px; 
+}
+
+.list > li:hover {
+    background: #3F97F6;
+}
+
+.list > li:hover a {
+    color: white;
+}
+
+/* -------------------------------------------------------------------*/
+article {
+    margin-left: 50px;
+}
+
+/*-------------------------------------------------------------------*/
+.academic {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-bottom: 2px solid #222222;
+}
+
+.academic > p  {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/*-------------------------------------------------------------------*/
+.table-1 {
+    border-top: 2px solid #071f4b;
+    border-collapse: collapse;
+    width: 100%;
+    height: 202px;
+    text-align: center;
+}
+
+.img > img {
+    width: 100px;
+    height: 100px;
+}
+
+.table-1 td {
+    width: 186px;
+    border: 1px solid #dedede;
+}
+
+.table-1 tr:nth-child(1) > td {
+    border-left: none;
+}
+
+.table-1 tr > td:last-child {
+    border-right: none;
+}
+
+.td-hd {
+    background-color: #f4f8fc;
+}
+
+.table-1 tr:nth-child(4) > td:nth-child(4) {
+    color: green;
+}
+
+.table-head {
+    margin-top: 40px;
+    padding-bottom: 0;
+    color: #145074;
+    margin-bottom: 10px;
+}
+
+.table-head > img {
+    margin-right: 5px;
+}
+
+/* -------------------------------------------------------------------- */
+.table-2 {
+    width: 100%;
+    height: 102px;
+    border-top: 2px solid #071f4b;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table-2 th,td {
+    border: 1px solid #dedede;
+}
+
+.table-2 th {
+    background-color: #f4f8fc;
+}
+
+.table-2 tr > th {
+    border-left: none;
+}
+
+.table-2 tr > th:last-child {
+    border-right: none;
+}
+
+
+.table-2 tr > td {
+    width: 116px;
+    border-left: none;
+}
+
+.table-2 tr > td:last-child {
+    border-right: none;
+}
+
+
+
+/*-------------------------------------------------------------------*/
+.p-nb {
+    margin-top: 10px;
+    color: #666666;
+}
+
+/*----------------------------------------------------------------------*/
+
+.table-3 {
+    width: 100%;
+    height: 252px;
+    border-top: 2px solid #071f4b;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.table-3 tr > th {
+    border-left: none;
+}
+
+.table-3 tr > th:last-child {
+    border-right: none;
+}
+
+.table-3 tr > td {
+    width: 93px;
+    border-left: none;
+}
+
+.table-3 tr > td:last-child {
+    border-right: none;
+}
+
+.table-3 th,td {
+    border: 1px solid #dedede;
+}
+
+.table-3 th {
+    background-color: #f4f8fc;
+}
+
+

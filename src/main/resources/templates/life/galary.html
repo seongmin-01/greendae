@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3조 - 그린대학교</title>
+        <th:block th:include="/_headerLink"/>
+        <link rel="stylesheet" th:href="@{/css/life/galary.css}">
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <th:block th:include="/common/__header"/>
+            <div class="homebar">
+                <article class="inline">
+                    <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/life/council}">대학생활</a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/life/galary}">갤러리</a>
+
+                </article>
+            </div>
+            <main>
+                <aside>
+                    <p class="list-hadding">대학생활</p>
+                    <ul class="list">
+                        <li><a th:href="@{/life/council}">학생회 소개</a></li>
+                        <li><a th:href="@{/life/study}">동아리/스터디</a></li>
+                        <li><a th:href="@{/life/meal}">식단안내</a></li>
+                        <li style="background-color: #3F97F6;"><a style="color: white;" th:href="@{/life/galary}">갤러리</a></li>
+                    </ul>
+                </aside>
+                <section>
+                    <span>갤러리</span>
+                    <article>
+                        <div>
+                            <img src="/images/gallary_sample1.jpg">
+                            <a href="#">제 40회 1995학년도 학위수여식</a>
+                            <ul>
+                                <li>조회수 23</li>&nbsp|&nbsp;
+                                <li>글로벌...</li>&nbsp|&nbsp;
+                                <li>25.02.20</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="/images/gallary_sample2.jpg">
+                            <a href="#">제 40회 1995학년도 학위수여식</a>
+                            <ul>
+                                <li>조회수 23</li>&nbsp|&nbsp;
+                                <li>글로벌...</li>&nbsp|&nbsp;
+                                <li>25.02.20</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="/images/gallary_sample3.jpg">
+                            <a href="#">제 40회 1995학년도 학위수여식</a>
+                            <ul>
+                                <li>조회수 23</li>&nbsp|&nbsp;
+                                <li>글로벌...</li>&nbsp|&nbsp;
+                                <li>25.02.20</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="/images/gallary_sample4.png">
+                            <a href="#">제 40회 1995학년도 학위수여식</a>
+                            <ul>
+                                <li>조회수 23</li>&nbsp|&nbsp;
+                                <li>글로벌...</li>&nbsp|&nbsp;
+                                <li>25.02.20</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="/images/gallary_sample5.jpg">
+                            <a href="#">제 40회 1995학년도 학위수여식</a>
+                            <ul>
+                                <li>조회수 23</li>&nbsp|&nbsp;
+                                <li>글로벌...</li>&nbsp|&nbsp;
+                                <li>25.02.20</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <div class="page">
+                        <a href="#" class="first"><img src="/images/btn-first-page.png"></a>
+                        <a href="#" class="prev"><img src="/images/btn-prev-page.png"></a>
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#" class="next"><img src="/images/btn-next-page.png"></a>
+                        <a href="#" class="last"><img src="/images/btn-last-page.png"></a>
+                    </div>
+                </section>
+            </main>
+            <th:block th:inclcude="/common/__footer"/>
+        </div>
+    </body>
+</html>

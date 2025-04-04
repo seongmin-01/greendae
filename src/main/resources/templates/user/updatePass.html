@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/user/resultId.css}">
+    <script th:src="@{/js/user/updatePass.js}"></script>
+</head>
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+
+    <div class="homebar">
+        <article class="inline">
+            <a th:href="@{/}"><img src="/images/ico-home.png" alt="homeico"></a>
+            <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+            <a th:href="@{/user/login}">회원</a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a th:href="@{/user/findPass}">비밀번호 찾기</a>
+        </article>
+    </div>
+
+    <main>
+        <article class="update-pass-container">
+            <div class="form-hd">
+                <h1>새 비밀번호 설정</h1>
+            </div>
+
+            <form name="formUpdatePass" th:action="@{/updatePass}" method="post">
+                <div class="form-group">
+                    <table>
+                        <input type="hidden" name="id" th:value="${resultUser}" />
+                        <tr>
+                            <th>비밀번호</th>
+                            <td><input type="password" id="password" name="password" placeholder="비밀번호 입력">
+                                <p class="desc">비밀번호는 8-16자리 이내, 영문·숫자·특수문자 조합</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호 확인</th>
+                            <td>
+                                <input class="register" id="password2" type="password" name="password2" placeholder="비밀번호 입력 확인"/>
+                                <span class="passResult"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <input type="submit" class="submit-btn" value="비밀번호 변경">
+            </form>
+        </article>
+    </main>
+
+    <th:block th:include="/common/__footer"/>
+</div>
+</body>
+</html>

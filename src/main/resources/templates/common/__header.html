@@ -1,0 +1,90 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<header>
+    <div class="nav">
+        <div class="navbar">
+
+            <div class="navbar-item"><a th:href="@{/main}">HOME</a></div>
+            <div class="navbar-item"><a href="#">사이트맵</a></div>
+
+            <div class="navbar-item"  sec:authorize="isAnonymous()">
+                <a th:href="@{/user/login}">로그인</a>
+            </div>
+            <div class="navbar-item" sec:authorize="isAuthenticated()">
+                <a th:href="@{/user/logout}">로그아웃</a>
+            </div>
+            <div class="navbar-item"><a th:href="@{/support/CourseRegister}">학생지원</a></div>
+            <div class="navbar-item">
+                <a th:href="@{/adminMain}" sec:authorize="hasRole('ADMIN')">관리자</a>
+            </div>
+        </div>
+    </div>
+    <div class="headerbar">
+        <a th:href="@{/main}"><img th:src="@{/images/header_logo.png}" alt="그린대학교"></a>
+        <ul id="quickmenu">
+
+            <li><a th:href="@{/Introduction/presidentMessage}">대학소개</a>
+                <ul class="sub_menu_list">
+                    <li><a th:href="@{/Introduction/presidentMessage}">총장 인사말</a></li>
+                    <li><a th:href="@{/Introduction/educationalPhilosophy}">교육이념</a></li>
+                    <li><a th:href="@{/Introduction/history}">연혁</a></li>
+                    <li><a th:href="@{/Introduction/organizationalChart}">조직도</a></li>
+                    <li><a th:href="@{/Introduction/directions}">오시는 길</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/Admission/notice}">입학안내</a>
+                <ul class="sub_menu_list">
+                    <li><a th:href="@{/Admission/notice}">공지사항</a></li>
+                    <li><a th:href="@{/Admission/earlyAdmission}">수시모집</a></li>
+                    <li><a th:href="@{/Admission/regularAdmission}">정시모집</a></li>
+                    <li><a th:href="@{/Admission/transferAdmission}">편입학</a></li>
+                    <li><a th:href="@{/Admission/admissionCounseling}">입학상담</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/department/humanities}">대학·대학원</a>
+                <ul class="sub_menu_list">
+                    <li><a th:href="@{/department/humanities}">인문사회대학</a></li>
+                    <li><a th:href="@{/department/naturalscience}">자연과학대학</a></li>
+                    <li><a th:href="@{/department/engineering}">공과대학</a></li>
+                    <li><a th:href="@{/department/teacher}">사범대학</a></li>
+                    <li><a th:href="@{/department/graduateSchool}">대학원</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/Bachelor/BacNotice}">학사안내</a>
+                <ul class="sub_menu_list">
+                    <li><a th:href="@{/Bachelor/BacNotice}">공지사항</a></li>
+                    <li><a th:href="@{/Bachelor/BacSchedule}">학사일정</a></li>
+                    <li><a th:href="@{/Bachelor/BacSubscribe}">수강신청</a></li>
+                    <li><a th:href="@{/Bachelor/BacResult}">성적</a></li>
+                    <li><a th:href="@{/Bachelor/BacGrad}">수료 및 졸업</a></li>
+                    <li><a th:href="@{/Bachelor/BacQuestion}">자주묻는질문</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/life/council}">대학생활</a>
+                <ul class="sub_menu_list">
+                    <li><a th:href="@{/life/council}">학생회소개</a></li>
+                    <li><a th:href="@{/life/study}">동아리/스터디</a></li>
+                    <li><a th:href="@{/life/meal}">식단안내</a></li>
+                    <li><a th:href="@{/life/galary}">갤러리</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/Community/notice}">커뮤니티</a>
+                <ul class="sub_menu_list">
+                    <li><a th:href="@{/Community/notice}">공지사항</a></li>
+                    <li><a th:href="@{/Community/news}">뉴스 및 칼럼</a></li>
+                    <li><a th:href="@{/Community/job}">취업정보</a></li>
+                    <li><a th:href="@{/Community/free}">자유게시판</a></li>
+                    <li><a th:href="@{/Community/qa}">질문과 답변</a></li>
+                    <li><a th:href="@{/Community/resource}">자료실</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>

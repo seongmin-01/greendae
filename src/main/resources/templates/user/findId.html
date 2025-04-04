@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/user/find.css}">
+    <script th:src="@{/js/user/findId.js}"></script>
+</head>
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+
+    <div class="homebar">
+        <article class="inline">
+            <a th:href="@{/}"><img src="/images/ico-home.png" alt="homeico"></a>
+            <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+            <a th:href="@{/user/login}">회원</a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a th:href="@{/user/findId}">아이디 찾기</a>
+        </article>
+    </div>
+    <main>
+        <article class="content">
+            <div class="form-header">
+                <h1>아이디 찾기</h1>
+            </div>
+            <form name="formfindId" th:action="@{/findId}" method="post">
+
+                <div class="form-box">
+                    <p class="info-text">
+                        본인확인 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.
+                    </p>
+                    <div class="input-group name-group">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+                        <span class="nameResult"></span>
+                    </div>
+                    <div class="input-group email-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" class="email-input" placeholder="이메일을 입력하세요">
+                        <button id="btnSendEmail" type="button">인증번호 받기</button>
+                        <span class="emailResult"></span>
+                    </div>
+
+                    <!-- 인증코드 입력 영역: 처음에 숨김 -->
+                    <div class="input-group auth-group" style="display: none;">
+                        <label for="auth">인증코드</label>
+                        <input type="text" id="auth" name="auth" class="email-input" placeholder="인증번호 입력">
+                        <button id="btnAuthEmail" type="button">확인</button>
+                        <span class="authResult"></span> <!-- 인증 결과 메시지용 -->
+                    </div>
+                </div>
+
+                <input type="submit" value="다음" class="submit-button"/>
+            </form>
+        </article>
+    </main>
+
+
+    <th:block th:include="/common/__footer"/>
+
+</div>
+</body>
+</html>

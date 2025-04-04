@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3조 - 그린대학교</title>
+        <th:block th:include="/_headerLink"/>
+        <link rel="stylesheet" href="/css/support/CourseRegister.css">
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <th:block th:include="/common/__header"/>
+
+            <div class="homebar">
+                <article class="inline">
+                    <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/Support/CourseRegister}">학생지원</a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/Support/CourseRegister}">수강신청</a>
+
+                </article>
+            </div>
+            <main>
+                <aside class="side">
+                    <p class="list-hadding">학생지원</p>
+                    <ul class="list">
+                        <li style="background-color: #3F97F6;"><a style="color: white;" th:href="@{/Support/CourseRegister}">수강신청</a></li>
+                        <li><a th:href="@{/Support/courseList}">수강신청내역</a></li>
+                        <li><a th:href="@{/Support/curriculumList}">나의교과과정</a></li>
+                        <li><a th:href="@{/Support/GradeList}">성적조회</a></li>
+                        <li><a th:href="@{/Support/academicList}">학적</a></li>
+
+                    </ul>
+                </aside>
+                <article class="course">
+                    <div class="coursetop">
+                        <p>수강신청</p>
+                    </div>
+                    <div class="search">
+                        <select class="dropdown">
+                            <option>전체</option>
+                            <option>제목</option>
+                            <option>작성자</option>
+                            <option>내용</option>
+                        </select>
+                        <input type="text" value="검색어를 입력해 주세요">
+                        <div class="searchbtn"> 
+                            <a href="">검색</a>
+                        </div>
+                    </div>
+                    <div class="coursemain">
+                        <table>
+                            <tr class="table-hd">
+                                <th>개설학과</th>
+                                <th>구분</th>
+                                <th>학년</th>
+                                <th>코드</th>
+                                <th>과목명</th>
+                                <th>학점</th>
+                                <th>담당교수</th>
+                                <th>수강인원</th>
+                                <th>비고</th>
+                                <th>신청</th>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>컴퓨터공학</td>
+                                <td>전공</td>
+                                <td>1</td>
+                                <td>830001</td>
+                                <td>컴퓨터과학개론</td>
+                                <td>3</td>
+                                <td>김컴공</td>
+                                <td>12/30</td>
+                                <td></td>
+                                <td class="submit"><button type="button">신청</button></td>
+                            </tr>
+
+                            <tr class="table-bd">
+                                <td>컴퓨터공학</td>
+                                <td>전공</td>
+                                <td>2</td>
+                                <td>830001</td>
+                                <td>데이터베이스</td>
+                                <td>3</td>
+                                <td>김컴공</td>
+                                <td>12/30</td>
+                                <td></td>
+                                <td class="submit"><button type="button">신청</button></td>
+                            </tr>
+
+                            <tr class="table-bd">
+                                <td>컴퓨터공학</td>
+                                <td>전공</td>
+                                <td>2</td>
+                                <td>830001</td>
+                                <td>운영체제론</td>
+                                <td>3</td>
+                                <td>김컴공</td>
+                                <td>12/30</td>
+                                <td></td>
+                                <td class="submit"><button type="button">신청</button></td>
+                            </tr>
+
+                            <tr class="table-bd">
+                                <td>컴퓨터공학</td>
+                                <td>전공</td>
+                                <td>1</td>
+                                <td>830001</td>
+                                <td>자바프로그래밍</td>
+                                <td>3</td>
+                                <td>김컴공</td>
+                                <td>12/30</td>
+                                <td></td>
+                                <td class="submit"><button type="button">신청</button></td>
+                            </tr>
+
+                            <tr class="table-bd">
+                                <td>컴퓨터공학</td>
+                                <td>전공</td>
+                                <td>4</td>
+                                <td>830001</td>
+                                <td>인공지능</td>
+                                <td>3</td>
+                                <td>김컴공</td>
+                                <td>12/30</td>
+                                <td></td>
+                                <td class="submit"><button type="button">신청</button></td>
+                            </tr>
+                        </table>
+                        <article class="pagebtn">
+                            <a href=""><img src="/images/btn-first-page.png" alt="firstarr"></a>
+                            <a href=""><img src="/images/btn-prev-page.png" alt="firstarr"></a>
+                            <a href="">1</a>
+                            <a href="">2</a>
+                            <a href="">3</a>
+                            <a href=""><img src="/images/btn-next-page.png" alt="firstarr"></a>
+                            <a href=""><img src="/images/btn-last-page.png" alt="firstarr"></a>
+                        </article>
+                    </div>
+                </article>
+            </main>
+
+            <th:block th:inclcude="/common/__footer"/>
+        </div>
+        
+    </body>
+</html>

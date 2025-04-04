@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3조 - 그린대학교</title>
+    <link rel="stylesheet" href="/css/_header.css">
+    <link rel="stylesheet" href="/css/_footer.css">
+    <link rel="stylesheet" href="/css/Community/view.css">
+    <link rel="stylesheet" href="/css/homebar.css">
+    <link rel="stylesheet" href="/css/Community/resource.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+    <div class="homebar">
+        <article class="inline">
+            <a href="/main"><img src="/images/ico-home.png" alt="homeico"></a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a href="/Community/resource">커뮤니티</a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a href="/Community/resource">글보기</a>
+        </article>
+    </div>
+    <main id="article">
+        <section class="view">
+            <article class="notice"  style="padding-left: 0; margin-left: 0">
+                <div class="noticetop" style="width: 1200px;">
+                    <h4 style="padding-left: 10px;">공지사항</h4>
+                </div>
+            </article>
+            <table border="0">
+                <tr>
+                    <th>제목</th>
+                    <td><input type="text" name="title" th:value="${noticeDTO.title}" readonly/></td>
+                </tr>
+                <tr>
+                    <th>작성자</th>
+                    <td><input type="text" name="title" th:value="${noticeDTO.writer}" readonly/></td>
+                </tr>
+                <tr>
+                    <th>작성일</th>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td>
+                        <textarea name="content" readonly>[[${noticeDTO.content}]]</textarea>
+                    </td>
+                </tr>
+            </table>
+            <a th:href="@{/Admission/delete(no=${noticeDTO.no})}"  class="btn btnRemove">삭제</a>
+        </section>
+    </main>
+    <th:block th:include="/common/__footer"/>
+</div>
+</body>
+</html>

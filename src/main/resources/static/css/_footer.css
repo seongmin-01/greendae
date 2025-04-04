@@ -1,0 +1,138 @@
+
+footer {
+    width: 100%;
+    height: auto;
+    background: #1a1d21;
+}
+
+.top-footer {
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    background-color: #1f2838;
+    border-bottom: 1px solid #333;
+}
+
+.footer-link {
+    max-width: 1400px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-link li {
+    position: relative;
+    float: left;
+    line-height: 1;
+    text-align: center;
+    padding: 0 65px;
+    box-sizing: border-box;
+}
+
+.footer-link li::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-link li::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-link li a {
+    display: block;
+    padding: 15px 10px 16px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 19px;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 169px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.footer_logo {
+    margin-bottom: 50px;
+}
+
+.footer-contact {
+    color: #A8A9AC;
+}
+
+
+.footer-dropdown {
+    position: absolute;
+    right: 0px;
+    bottom: 90px;
+    width: 200px;
+    height: 36px;
+    appearance: none;
+    border: none;
+    background: url('/images/bg-related-arr-open.png') no-repeat right center;
+    background-position: calc(100% - 10px) center;
+    background-color: #121721;
+    text-align: left;
+    padding-left: 10px;
+    font-weight: 350;
+    color: #a7a7a7;
+}
+
+.footer-dropdown a {
+    color: #aaa;
+}
+
+.footer-content-box {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.footer_logo img {
+    max-width: 150px;
+}
+
+.footer-info {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #ddd;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #aaa;
+}
+
+.version {
+    color: white;
+    position: absolute;
+    right: 0;
+    bottom: 65px;
+    font-size: 12px;
+}

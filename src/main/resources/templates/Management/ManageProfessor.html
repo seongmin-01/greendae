@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <link rel="stylesheet" href="/css/Management/_manageheader.css">
+    <link rel="stylesheet" href="/css/Management/ManageProfessor.css">
+    <link rel="stylesheet" href="/css/Management/_managefooter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/_adminHeader"/>
+        <main>
+            <th:block th:include="/common/_adminSide"/>
+            <div class="managemain">
+                <article class="managemaintop">
+                    <h4>교수 등록</h4>
+                    <div>
+                        <h3>인사 관리</h3>
+                        <img src="/images/bg-link-arr-over.png">
+                        <h3>교수 등록</h3>
+                    </div>
+                </article>
+                <div>
+                    <img src="/images/bullet-h4.png">
+                    <h3>기본정보 입력</h3>
+                </div>
+                    <form class="professor"th:action="@{/Management/ManageProfessor}" method="post">
+                        <table class="table-1">
+                            <tr>
+                                <td rowspan="4" class="avatar">
+                                    <img src="/images/icon-avatar.png">
+                                </td>
+                                <td>교수번호</td>
+                                <td>
+                                    <input type="hidden" name="id" />
+                                    <span id="professorIdDisplay">교수번호 자동생성</span>
+                                </td>
+                                <td>주민등록번호</td>
+                                <td><input type="text" name="jumin" placeholder="- 포함 14자리 입력"></td>
+                            </tr>
+                            <tr>
+                                <td>이름</td>
+                                <td><input type="text" name="name" placeholder="교수 이름 입력"></td>
+                                <td>영문명</td>
+                                <td><input type="text" name="eng_name" placeholder="여권 등과 동일한 영문 이름"></td>
+                            </tr>
+                            <tr>
+                                <td>성별</td>
+                                <td>
+                                    <label><input type="radio" name="gender" value="남"> 남</label>
+                                    <label><input type="radio" name="gender" value="여"> 여</label>
+                                </td>
+                                <td>국적</td>
+                                <td>
+                                    <select id="nationality" name="nationality">
+                                        <option value="">선택</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>휴대폰</td>
+                                <td>
+                                    <input type="text" name="phone" placeholder="휴대폰 번호 입력">
+                                </td>
+                                <td>이메일</td>
+                                <td>
+                                    <input type="text" name="email" placeholder="이메일 입력">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>주소</td>
+                                <td colspan="3">
+                                    <input type="text" id="postcode" placeholder="우편번호 선택">
+                                    <button type="button" onclick="searchPostcode()">우편번호</button><br>
+                                    <input type="text" name="addr1" id="address" placeholder="기본주소 선택"><br>
+                                    <input type="text" name="addr2" id="detailAddress" placeholder="상세주소 입력">
+                                </td>
+                            </tr>
+                        </table>
+                    
+                        <div>
+                            <img src="/images/bullet-h4.png">
+                            <h3>학과정보 입력</h3>
+                        </div>
+                        <table class="table-2">
+                            <tr>
+                                <td>졸업대학</td>
+                                <td><input type="text" name="gradColName" placeholder="대학교 이름 입력"></td>
+                                <td>학문 분야(전공)</td>
+                                <td><input type="text" name="major" placeholder="전공입력"></td>
+                            </tr>
+                            <tr>
+                                <td>졸업일</td>
+                                <td><input type="date" name="end_date"></td>
+                                <td>학위</td>
+                                <td>
+                                    <select name="degree">
+                                        <option>박사</option>
+                                        <option>석사</option>
+                                        <option>학사</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>담당학과</td>
+                                <td class="td-bd2">
+                                    <select class="dropdown" name="college_name" id="collegeSelect">
+                                        <option>단과대학선택</option>
+                                        <th:block th:each="college : ${colleges}">
+                                            <option th:value="${college.collegeName}" th:text="${college.collegeName}"></option>
+                                        </th:block>
+                                    </select>
+                                    <select class="dropdown" name="departmentName" id="departmentSelect">
+                                        <option value="">학과를 선택하세요</option>
+                                    </select>
+                                </td>
+                                <td>임용일</td>
+                                <td><input type="date" name="appointmentDate"></td>
+                            </tr>
+                        </table>
+                        <input type="submit" value="등록" class="form-btn">
+                </form>    
+            </div>
+            </main>
+        <th:block th:include="/common/_adminFooter"/>
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const countries = [
+                { code: "af", name: "아프가니스탄" }, { code: "al", name: "알바니아" },
+                { code: "dz", name: "알제리" }, { code: "ad", name: "안도라" },
+                { code: "ao", name: "앙골라" }, { code: "ag", name: "앤티가 바부다" },
+                { code: "ar", name: "아르헨티나" }, { code: "am", name: "아르메니아" },
+                { code: "au", name: "호주" }, { code: "at", name: "오스트리아" },
+                { code: "az", name: "아제르바이잔" }, { code: "bs", name: "바하마" },
+                { code: "bh", name: "바레인" }, { code: "bd", name: "방글라데시" },
+                { code: "bb", name: "바베이도스" }, { code: "by", name: "벨라루스" },
+                { code: "be", name: "벨기에" }, { code: "bz", name: "벨리즈" },
+                { code: "bj", name: "베냉" }, { code: "bt", name: "부탄" },
+                { code: "bo", name: "볼리비아" }, { code: "ba", name: "보스니아 헤르체고비나" },
+                { code: "bw", name: "보츠와나" }, { code: "br", name: "브라질" },
+                { code: "bn", name: "브루나이" }, { code: "bg", name: "불가리아" },
+                { code: "bf", name: "부르키나파소" }, { code: "bi", name: "부룬디" },
+                { code: "cv", name: "카보베르데" }, { code: "kh", name: "캄보디아" },
+                { code: "cm", name: "카메룬" }, { code: "ca", name: "캐나다" },
+                { code: "cf", name: "중앙아프리카공화국" }, { code: "td", name: "차드" },
+                { code: "cl", name: "칠레" }, { code: "cn", name: "중국" },
+                { code: "co", name: "콜롬비아" }, { code: "km", name: "코모로" },
+                { code: "cd", name: "콩고민주공화국" }, { code: "cg", name: "콩고공화국" },
+                { code: "cr", name: "코스타리카" }, { code: "hr", name: "크로아티아" },
+                { code: "cu", name: "쿠바" }, { code: "cy", name: "키프로스" },
+                { code: "cz", name: "체코" }, { code: "dk", name: "덴마크" },
+                { code: "dj", name: "지부티" }, { code: "dm", name: "도미니카" },
+                { code: "do", name: "도미니카공화국" }, { code: "ec", name: "에콰도르" },
+                { code: "eg", name: "이집트" }, { code: "sv", name: "엘살바도르" },
+                { code: "gq", name: "적도기니" }, { code: "er", name: "에리트레아" },
+                { code: "ee", name: "에스토니아" }, { code: "et", name: "에티오피아" },
+                { code: "fj", name: "피지" }, { code: "fi", name: "핀란드" },
+                { code: "fr", name: "프랑스" }, { code: "ga", name: "가봉" },
+                { code: "gm", name: "감비아" }, { code: "ge", name: "조지아" },
+                { code: "de", name: "독일" }, { code: "gh", name: "가나" },
+                { code: "gr", name: "그리스" }, { code: "gt", name: "과테말라" },
+                { code: "gn", name: "기니" }, { code: "gy", name: "가이아나" },
+                { code: "ht", name: "아이티" }, { code: "hn", name: "온두라스" },
+                { code: "hu", name: "헝가리" }, { code: "is", name: "아이슬란드" },
+                { code: "in", name: "인도" }, { code: "id", name: "인도네시아" },
+                { code: "ir", name: "이란" }, { code: "iq", name: "이라크" },
+                { code: "ie", name: "아일랜드" }, { code: "il", name: "이스라엘" },
+                { code: "it", name: "이탈리아" }, { code: "jm", name: "자메이카" },
+                { code: "jp", name: "일본" }, { code: "jo", name: "요르단" },
+                { code: "kz", name: "카자흐스탄" }, { code: "ke", name: "케냐" },
+                { code: "kr", name: "대한민국" }, { code: "kw", name: "쿠웨이트" },
+                { code: "lv", name: "라트비아" }, { code: "lb", name: "레바논" },
+                { code: "ly", name: "리비아" }, { code: "lt", name: "리투아니아" },
+                { code: "lu", name: "룩셈부르크" }, { code: "mg", name: "마다가스카르" },
+                { code: "mw", name: "말라위" }, { code: "my", name: "말레이시아" },
+                { code: "mx", name: "멕시코" }, { code: "ma", name: "모로코" },
+                { code: "mz", name: "모잠비크" }, { code: "mm", name: "미얀마" },
+                { code: "np", name: "네팔" }, { code: "nl", name: "네덜란드" },
+                { code: "nz", name: "뉴질랜드" }, { code: "ng", name: "나이지리아" },
+                { code: "no", name: "노르웨이" }, { code: "pk", name: "파키스탄" },
+                { code: "ph", name: "필리핀" }, { code: "pl", name: "폴란드" },
+                { code: "pt", name: "포르투갈" }, { code: "qa", name: "카타르" },
+                { code: "ro", name: "루마니아" }, { code: "ru", name: "러시아" },
+                { code: "sa", name: "사우디아라비아" }, { code: "sg", name: "싱가포르" },
+                { code: "za", name: "남아프리카공화국" }, { code: "es", name: "스페인" }
+            ];
+            
+            const select = document.getElementById("nationality");
+            
+            countries.forEach(country => {
+                let option = document.createElement("option");
+                option.value = country.code;
+                option.textContent = country.name;
+                select.appendChild(option);
+            });
+        });
+        </script>
+        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+        <script>
+        function searchPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    document.getElementById("postcode").value = data.zonecode;
+                    document.getElementById("address").value = data.roadAddress || data.jibunAddress;
+                    document.getElementById("detailAddress").focus();
+                }
+            }).open();
+        }
+        </script>
+    <script>
+        document.getElementById("collegeSelect").addEventListener("change", function () {
+            const selectedCollege = this.value;
+
+            fetch(`/api/departments/by-college?collegeName=${encodeURIComponent(selectedCollege)}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("받은 데이터", data);  // 여기에 ["영어영문학과", "행정학과"] 등 나와야 함
+                    const departmentSelect = document.getElementById("departmentSelect");
+                    departmentSelect.innerHTML = '<option>학과를 선택하세요</option>';
+
+                    data.forEach(deptName => {
+                        const option = document.createElement("option");
+                        option.value = deptName;
+                        option.text = deptName;
+                        departmentSelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error("에러 발생", error);
+                });
+        });
+        document.getElementById('departmentSelect').addEventListener('change', function () {
+            const departmentName = this.value;
+
+            fetch(`/api/professors/generate-id?departmentName=${encodeURIComponent(departmentSelect)}`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('generatedIdText').innerText = data.id;
+                    document.getElementById('professorId').value = data.id;
+                })
+                .catch(err => console.error('ID 생성 오류:', err));
+        });
+        $("#departmentSelect").on("change", function () {
+            const deptName = $(this).val();
+            $.get("/api/professors/generate-id?departmentName=" + deptName, function (data) {
+                $("input[name='id']").val(data);
+                $("span#professorIdDisplay").text(data);
+            });
+        });
+    </script>
+    </body>
+
+    </html>

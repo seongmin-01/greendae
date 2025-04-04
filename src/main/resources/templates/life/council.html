@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3조 - 그린대학교</title>
+        <th:block th:include="/_headerLink"/>
+        <link rel="stylesheet" th:href="@{/css/life/council.css}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <th:block th:include="/common/__header"/>
+            <div class="homebar">
+                <article class="inline">
+                    <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/life/council}">대학생활</a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/life/council}">학생회 소개</a>
+
+                </article>
+            </div>
+            <main>
+                <aside>
+                        <p class="list-hadding">대학생활</p>
+                        <ul class="list">
+                        <li style="background-color: #3F97F6;"><a style="color: white;" th:href="@{/life/council}">학생회 소개</a></li>
+                        <li><a th:href="@{/life/study}">동아리/스터디</a></li>
+                        <li><a th:href="@{/life/meal}">식단안내</a></li>
+                        <li> <a th:href="@{/life/galary}">갤러리</a></li>
+                    </ul>
+                </aside>
+                <section>
+                    <span>학생회 소개</span>
+                    <article>
+                        <div class="read">
+                            <div>
+                                <img src="/images/council_sample.png">
+                                <div>
+                                    <a href="#">활동증명서</a><br>
+                                    그린대 학생회<br>
+                                    활동증명서를<br>
+                                    발급받으세요!<br>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/images/council_sample2.png">
+                                <div>
+                                    <a herf=""#>회의록</a><br>
+                                    총학생회<br>
+                                    회의록을<br> 
+                                    살펴보세요!
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/images/council_sample2.png">
+                                <div>
+                                    <a href="#">과거 자료</a><br>
+                                    홈페이지 개편 이전<br>
+                                    총학생회 자료를<br> 
+                                    확인해보세요!
+                                </div>
+                            </div>
+                        </div>
+                        <img src="/images/council_logo.webp" class="logo">
+                        <table>
+                            <tr>
+                                <th colspan="3">지금 학생회는?</th>
+                            </tr>
+                            <tr>
+                                <td>제 62대 그린대학교 총학생회 ...</td>
+                                <td>김땡땡</td>
+                                <td>2025-03-11</td>
+                            </tr>
+                            <tr>
+                                <td>제 62대 그린대학교 총학생회 ...</td>
+                                <td>김땡땡</td>
+                                <td>2025-03-11</td>
+                            </tr>
+                            <tr>
+                                <td>제 62대 그린대학교 총학생회 ...</td>
+                                <td>김땡땡</td>
+                                <td>2025-03-11</td>
+                            </tr>
+                            <tr>
+                                <td>제 62대 그린대학교 총학생회 ...</td>
+                                <td>김땡땡</td>
+                                <td>2025-03-11</td>
+                            </tr>
+                            <tr>
+                                <td>제 62대 그린대학교 총학생회 ...</td>
+                                <td>김땡땡</td>
+                                <td>2025-03-11</td>
+                            </tr>
+                        </table>
+                    </article>
+                </section>
+            </main>
+            <th:block th:inclcude="/common/__footer"/>
+        </div>
+    </body>
+</html>

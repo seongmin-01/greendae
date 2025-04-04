@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" href="/css/introduction.css">
+</head>
+<!---------------------헤더------------------------------->
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/__header"/>
+        
+        <div class="homebar">
+            <article class="inline">
+                <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/Introduction/presidentMessage}">대학소개</a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/Introduction/history}">연혁</a>
+            </article>
+        </div>
+<!---------------------사이드바------------------------------>
+    <main>
+        
+        <section class="sidebar">
+            <aside>
+                <h2>대학소개</h2>
+                <ul class="menu">
+                    <li><a th:href="@{/Introduction/presidentMessage}" >총장 인사말</a></li>
+                    <li><a th:href="@{/Introduction/educationalPhilosophy}" >교육이념</a></li>
+                    <li><a th:href="@{/Introduction/history}" class="on">연혁</a></li>
+                    <li><a th:href="@{/Introduction/organizationalChart}" >조직도</a></li>
+                    <li><a th:href="@{/Introduction/directions}">오시는 길</a></li>
+
+                </ul>
+            </aside>
+        </section>
+        
+    <!-----------------------본문---------------------------------->
+        <section class="content">
+            <h1>연혁</h1>
+           
+            <div class="history-header">
+                <h2>History of Green University</h2>
+                <p>개교 70년, 개발에 반해온 세월</p>
+            </div>
+            
+            <div class="history-section">
+                <h3>2024년</h3>
+                <ul>
+                    <li><strong>3월</strong> - 통일한국연구원 개원</li>
+                    <li><strong>3월</strong> - 주한독일문화원 부산분원 개원</li>
+                    <li><strong>10월</strong> - 부마민주항쟁 40주년 기념식(국가기념일 지정)</li>
+                    <li><strong>12월</strong> - 10.16연구소 설립</li>
+                </ul>
+            </div>
+            
+            <div class="history-section">
+                <h3>2023년</h3>
+                <ul>
+                    <li><strong>5월</strong> - 인권센터 신설</li>
+                    <li><strong>9월</strong> - 특수대학원 신설(금융대학원 파생금융전공 석사과정)</li>
+                </ul>
+            </div>
+            
+            <div class="history-section">
+                <h3>2022년</h3>
+                <ul>
+                    <li><strong>1월</strong> - IBS 기초물리 연구단(CCQ) 출범</li>
+                    <li><strong>3월</strong> - 故 한유숙 여사 부산대 장학금 약속(리처드 워터텀 장군 미망인)</li>
+                    <li><strong>6월</strong> - 기념탑 준공식</li>
+                    <li><strong>8월</strong> - 김상곤 부총리 겸 교육부장관 그린대 방문 ‘대학자율화’ 선언</li>
+                    <li><strong>10월</strong> - 행정중재위원회 주최 전국대학과 ‘지방대 최고위원회’, 대외교류부문 행정최상, 연구실 안전관리센터 신설</li>
+                    <li><strong>10월</strong> - 10.16 부마민주항쟁 38주년 기념식 및 기념행사 개최</li>
+                    <li><strong>12월</strong> - 대한민국 교육기부대상 4회 수상</li>
+                </ul>
+            </div>
+            
+        </section>
+        
+    </main>
+<!--------------------------푸터-------------------------------->
+        <th:block th:include="/common/__footer"/>
+    </div>
+</body>
+</html>

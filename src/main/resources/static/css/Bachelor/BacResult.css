@@ -1,0 +1,236 @@
+  
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*homebar*/
+    .homebar {
+        width: 100%;
+        height: auto;
+        background-color: #ECF2F6;
+        margin-bottom: 60px;
+    }
+    .homebar .inline {
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        text-align: right;
+        padding: 5px;
+    }
+    .homebar .inline img:nth-of-type(1) {
+        margin-left: 8px;
+    }
+    .homebar .inline a:nth-of-type(1) {
+        position: relative;
+        top: 2px;
+    }
+    .homebar .inline a:nth-of-type(2) {
+        margin-right: 10px;
+        position: relative;
+        bottom: 1px;
+        margin-left: 8px;
+    }
+    .homebar .inline a:nth-of-type(3) {
+        margin-right: 10px;
+        margin-left: 8px;
+        position: relative;
+        bottom: 1px;
+        left: 2px;
+    }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+    /*메인*/
+        main {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            margin-bottom: 130px;
+        }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        /*사이드*/
+        main .side {
+            width: 210px;
+            flex-shrink: 0;
+            position: relative;
+            bottom: 10px;
+        }
+        main .side h4 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        main .side ul {
+            text-align: left;
+            border-top: 2px solid black;
+            width: 210px;
+            margin-top: 10px;
+        }
+        main .side ul li {
+            border-bottom: 1px solid #DCDCDC;
+            padding: 20px 15px;
+        }
+        main .side ul li a {
+            font-size: 16px;
+        }
+        main .side ul li:hover {
+            background: #3F97F6;
+        }
+        main .side ul li:hover a {
+            color: white;
+        }
+        main .side ul li:nth-of-type(4) {
+            background: #3F97F6;
+        }
+        main .side ul li:nth-of-type(4) a {
+            color: white;
+        }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        /*공지사항*/
+        main .notice {
+            width: 100%;
+            max-width: 940px;
+            padding-left: 50px;
+            flex-grow: 1;
+        }
+        main .notice .noticetop {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid black;
+            margin-bottom: 25px;
+        }
+        main .notice .noticetop h4 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+ /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        /*search*/
+        main .search {
+            float: right;
+            display: flex;
+            
+        }
+        main .search .dropdown {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 150px;
+            padding: 10px;
+            margin-right: 5px;
+            border: 1px solid #DEDEDE;
+            color: #666666;
+            font-size: 15px;
+        }
+        main .search input {
+            padding: 10px;
+            width: 237px;
+            border: 1px solid #DEDEDE;
+            color: #666666;
+            font-size: 15px;
+        }
+        main .search .searchbtn {
+            padding: 10px 20px;
+            background-color: #3F97F6;
+            border: 1px solid #3F97F6;
+        }
+        main .search .searchbtn a {
+            color: white;
+            font-size: 15px;
+        }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        /*성적*/
+        main .result {
+            width: 100%;
+            max-width: 940px;
+            padding-left: 50px;
+            flex-grow: 1;
+        }
+        main .result img {
+            margin-right: 8px;
+        }
+        main .result .resulttop {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid black;
+            margin-bottom: 25px;
+        }
+        main .result .resulttop h4 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: black;
+        }
+        main .result .test {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        main .result h4 {
+            font-size: 18px;
+            color: #145074;
+            margin-bottom: 5px;
+        }
+        main .result h3 {
+            color: #0067B3;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        main .result .test p {
+            font-size: 16px;
+            color: #666666;
+            line-height: 30px;
+        }
+        main .result .cheat {
+            width: 100%;
+            height: auto;
+            margin-bottom: 65px;
+        }
+        main .result .cheat p {
+            font-size: 16px;
+            color: #666666;
+            font-weight: 10px;
+        }
+        main .result .resulttxt {
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        main .result .resulttxt p {
+            font-size: 16px;
+            color: #333333;
+            line-height: 30px;
+        }
+        main .result .rating {
+            width: 100%;
+            height: auto;
+        }
+        main .result .rating table {
+            border-top: 2px solid #071F4B;
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        main .result .rating th {
+            background-color: #F4F8FC;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid #DEDEDE;
+        }
+        main .result .rating td {
+            text-align: center;
+            border: 1px solid #DEDEDE;
+            padding: 10px;
+            font-size: 16px;
+            color: #333333;
+        }
+        main .result .rating .lasttxt {
+            margin-top: 13px;
+        }
+        main .result .rating .lasttxt p {
+            font-size: 16px;
+            color: #666666;
+        }
+        
+        
+        

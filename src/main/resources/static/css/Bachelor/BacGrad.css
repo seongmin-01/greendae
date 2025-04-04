@@ -1,0 +1,259 @@
+   
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*homebar*/
+    .homebar {
+        width: 100%;
+        height: auto;
+        background-color: #ECF2F6;
+        margin-bottom: 60px;
+    }
+    .homebar .inline {
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        text-align: right;
+        padding: 5px;
+    }
+    .homebar .inline img:nth-of-type(1) {
+        margin-left: 8px;
+    }
+    .homebar .inline a:nth-of-type(1) {
+        position: relative;
+        top: 2px;
+    }
+    .homebar .inline a:nth-of-type(2) {
+        margin-right: 10px;
+        position: relative;
+        bottom: 1px;
+        margin-left: 8px;
+    }
+    .homebar .inline a:nth-of-type(3) {
+        margin-right: 10px;
+        margin-left: 8px;
+        position: relative;
+        bottom: 1px;
+        left: 2px;
+    }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*메인*/
+    main {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 130px;
+    }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*사이드*/
+    main .side {
+        width: 210px;
+        flex-shrink: 0;
+        position: relative;
+        bottom: 10px;
+    }
+    main .side h4 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+    main .side ul {
+        text-align: left;
+        border-top: 2px solid black;
+        width: 210px;
+        margin-top: 10px;
+    }
+    main .side ul li {
+        border-bottom: 1px solid #DCDCDC;
+        padding: 20px 15px;
+    }
+    main .side ul li a {
+        font-size: 16px;
+    }
+    main .side ul li:hover {
+        background: #3F97F6;
+    }
+    main .side ul li:hover a {
+        color: white;
+    }
+    main .side ul li:nth-of-type(5) {
+        background: #3F97F6;
+    }
+    main .side ul li:nth-of-type(5) a {
+        color: white;
+    }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*공지사항*/
+    main .grad {
+        width: 100%;
+        max-width: 940px;
+        padding-left: 50px;
+        flex-grow: 1;
+    }
+    main .grad .gradtop {
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid black;
+        margin-bottom: 25px;
+    }
+    main .grad .gradtop h4 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: black;
+    }
+    main .grad img {
+        margin-right: 8px;
+    }
+    main .grad h4 {
+        font-size: 18px;
+        color: #145074;
+        margin-bottom: 5px;
+    }
+    main .gradstandard {
+        margin-bottom: 50px;
+    }
+    main .gradstandard h4 {
+        margin-bottom: 13px;
+    }
+    main .grad .gradstandard table {
+        border-top: 2px solid #071F4B;
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    main .grad .gradstandard th {
+        background-color: #F4F8FC;
+        padding: 10px 0;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid #DEDEDE;
+        color: black;
+    }
+    main .grad .gradstandard th:nth-of-type(1) {
+        width: 250px;
+        height: 30px;
+    }
+    main .grad .gradstandard td {
+        text-align: center;
+        border: 1px solid #DEDEDE;
+        padding: 10px;
+        font-size: 16px;
+        color: #333333;
+    }
+    main .grad .gradstandard .total {
+        padding: 0;
+        width: 78px;
+    }
+    main .grad .grade th:nth-of-type(1) {
+        width: 136px;
+    }
+    main .grad .grade th:nth-of-type(2) {
+        width: 136px;
+    }
+    main .grad .grade th:nth-of-type(3) {
+        width: 136px;
+    }
+    main .grad .grade th:nth-of-type(4) {
+        width: 136px;
+    }
+    main .grad .getscore {
+        height: 35px;
+    }
+    main .grad .gradstandard p {
+        font-size: 16px;
+        color: #666666;
+        margin-top: 20px;
+    }
+    main .egrad {
+        width: 100%;
+        max-width: 930px;
+        flex-grow: 1;
+        margin-bottom: 40px;
+    }
+    main .egrad table {
+        border-top: 2px solid #071F4B;
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    main .egrad th {
+        background-color: #F4F8FC;
+        padding: 10px 0;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid #DEDEDE;
+        color: black;
+    }
+    main .egrad td {
+        text-align: center;
+        border: 1px solid #DEDEDE;
+        padding: 10px;
+        font-size: 16px;
+        color: #333333;
+    }
+    main .egrad .secth th:nth-of-type(1) {
+        width: 275px;
+        height: 29px;
+    }
+    main .egrad .secth th:nth-of-type(2) {
+        width: 183px;
+    }
+    main .egrad .secth th:nth-of-type(3) {
+        width: 183px;
+    }
+    main .egrad p {
+        font-size: 16px;
+        color: #666666;
+        margin-top: 20px;
+    }
+    main .graduation {
+        width: 100%;
+        max-width: 930px;
+        flex-grow: 1;
+    }
+    main .grad .graduation table {
+        border-top: 2px solid #071F4B;
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    main .grad .graduation th {
+        background-color: #F4F8FC;
+        padding: 10px 0;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid #DEDEDE;
+        color: black;
+    }
+    main .grad .graduation th:nth-of-type(1) {
+        width: 250px;
+        height: 30px;
+    }
+    main .grad .graduation td {
+        text-align: center;
+        border: 1px solid #DEDEDE;
+        padding: 10px;
+        font-size: 16px;
+        color: #333333;
+    }
+    main .grad .graduation .firstth th:nth-of-type(1) {
+        width: 275px;
+    }
+    main .grad .graduation .firstth th:nth-of-type(2) {
+        width: 136px;
+    }
+    main .grad .graduation .secondth th:nth-of-type(1) {
+        width: 136px;
+    }
+    main .grad .graduation .secondth th:nth-of-type(2) {
+        width: 136px;
+    }
+    main .graduation p {
+        font-size: 16px;
+        color: #666666;
+        margin-top: 20px;
+    }
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    
+    

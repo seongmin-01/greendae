@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/user/login.css}">
+    <script th:src="@{/js/user/login.js}"></script>
+    <script>
+        window.onload = function() {
+            // 서버에서 전달된 메시지를 확인하고 alert 창 띄우기
+            const errorMessage = `[[${error2}]]`;
+            if (errorMessage && errorMessage !== 'null') {
+                alert(errorMessage);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/__header"/>
+
+        <div class="homebar">
+            <article class="inline">
+                <a th:href="@{/}"><img src="/images/ico-home.png" alt="homeico"></a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/user/login}">회원</a>
+                <img src="/images/bg-path-arrow.png" alt="arrowright">
+                <a th:href="@{/user/login}">로그인</a>
+            </article>
+        </div>
+
+        <main>
+            <article class="content">
+                <div class="form-hd">
+                    <p>LOGIN</p>
+                    <p>로그인을 하시면 더 다양한 서비스를 받으실 수 있습니다.</p>
+                </div>
+                <form method="post" th:action="@{/user/login}">
+                    <ul>
+                        <div>
+                            <li><label><input type="radio" name="role" class="checkbox" value="STUDENT">학부생</label></li>
+                            <li><label><input type="radio" name="role" class="checkbox" value="PRO">교직원</label></li>
+                            <li><label><input type="radio" name="role" class="checkbox" value="USER">일반인</label></li>
+                        </div>
+                        <div>
+                            <a th:href="@{/findId}">아이디찾기 / </a>
+                            <a th:href="@{/findPass}"> 비밀번호 찾기</a>
+                        </div>
+                    </ul>
+                    
+                    <input type="text" name="id" placeholder="아이디">   <br>
+                    <input type="password" name="password" placeholder="비밀번호">  <br>
+
+                    <input type="submit" value="로그인" class="loginbtn">
+                    <a class="registerbtn" th:href="@{/user/terms}">회원가입</a>
+                </form>
+
+
+                <div class="guide">
+                    <p><img src="/images/bullet-h4.png">아이디,비밀번호 안내</p>
+                    <p>- 대학 구성원(학원, 교직원)은 회원가입없이 교번, 학번을 사용하여 로그인이 가능합니다.</p>
+                    <p>- 비밀번호 분실시 학생지원팀에 방문하셔서 초기화하실 수 있습니다.</p>
+                    <p>- 재학, 휴학, 졸업 유예인 경우 사용하실 수 있으며, 매년 학적변동이 일어날 때 상태가 변경됩니다.</p>
+                    <p>- 문의사항이 있으시면 담당자(055-123-4567)에게 전화주세요</p>
+                </div>
+            </article>
+        </main>
+        <th:block th:include="/common/__footer"/>
+</div>
+
+</body>
+</html>

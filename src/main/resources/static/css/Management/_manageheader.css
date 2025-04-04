@@ -1,0 +1,97 @@
+
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 12px "Noto Sans Korean", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    }
+    
+    ul,
+    ol {
+    list-style: none;
+    }
+    
+    a {
+    text-decoration: none;
+    color: #111;
+    }
+    
+    input,
+    textarea {
+    outline: none;
+    }
+    
+    #wrapper {
+    width: 100%;
+    height: auto;
+    
+    }
+    button {
+        all: unset;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    
+    /*헤더*/
+    header {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    }
+    
+    .nav {
+    background-color: #00518C;
+    display: flex;
+    width: 100%;
+    padding: 4px 0;
+    }
+    
+    .nav>.navbar {
+    width: 100%;
+    max-width: 1400px;
+    padding: 4px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    }
+    
+    .nav>.navbar>.navbar-item {}
+    
+    .nav>.navbar>.navbar-item:not(:last-child)::after {
+    content: "|";
+    color: white;
+    margin: 0 15px;
+    }
+    
+    .nav>.navbar>.navbar-item>a {
+    text-align: center;
+    color: white;
+    display: inline-block;
+    position: relative;
+    }
+    
+    
+    .headerbar {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    background-color: #1F2838;
+    }
+    
+    header .headerbar img {
+    position: relative;
+    }
+    header .headerbar .headerbarin{
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    

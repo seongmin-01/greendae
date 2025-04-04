@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+이름 : 김소현
+내용 : 커뮤니티 글쓰기
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3조 - 그린대학교</title>
+    <link rel="stylesheet" href="/css/_header.css">
+    <link rel="stylesheet" href="/css/_footer.css">
+    <link rel="stylesheet" href="/css/Community/view.css">
+    <link rel="stylesheet" href="/css/homebar.css">
+    <link rel="stylesheet" href="/css/Community/resource.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        function togglePassword(isLocked) {
+            const passwordRow = document.getElementById("passwordRow");
+            const passwordInput = document.getElementById("passwordInput");
+
+            if (isLocked) {
+                passwordRow.style.display = "table-row";
+                passwordInput.disabled = false;
+            } else {
+                passwordRow.style.display = "none";
+                passwordInput.disabled = true;
+            }
+        }
+
+        function validateForm() {
+            const lockedInput = document.querySelector('input[name="locked"]:checked');
+            const locked = lockedInput ? lockedInput.value : "false";
+
+            if (locked === "true") {
+                const passwordInput = document.getElementById("passwordInput");
+                if (!passwordInput || passwordInput.value.length !== 4 || !/^\d{4}$/.test(passwordInput.value)) {
+                    alert("비밀번호는 숫자 4자리로 입력해주세요.");
+                    passwordInput.focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+    <div class="homebar">
+        <article class="inline">
+            <a href="/main"><img src="/images/ico-home.png" alt="homeico"></a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a href="/Community/resource">커뮤니티</a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a href="/Community/resource">글쓰기</a>
+        </article>
+    </div>
+    <main id="article">
+        <section class="view">
+            <article class="notice"  style="padding-left: 0; margin-left: 0">
+                <div class="noticetop" style="width: 1200px;">
+                    <h4 style="padding-left: 10px;">글쓰기</h4>
+                </div>
+            </article>
+            <form th:action="@{/Community/write2}" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <input type="hidden" name="writer" th:value="${#authentication.principal.user.id}">
+                <input type="hidden" name="cate" th:value="${cate}">
+                <input type="hidden" name="status" value="wait">
+                <table border="0">
+                    <tr>
+                        <th>제목</th>
+                        <td><input type="text" name="title"></td>
+                    </tr>
+                    <tr>
+                        <th>잠금</th>
+                        <td>
+                            <input style="width: 50px; font-size: 16px;" type="radio" name="locked" value="true" onchange="togglePassword(true)"> 예
+                            <input style="width: 50px; font-size: 16px;" type="radio" name="locked" value="false" onchange="togglePassword(false)" checked> 아니오
+                        </td>
+                    </tr>
+
+                    <tr id="passwordRow" style="display: none;">
+                        <th>비밀번호</th>
+                        <td>
+                            <input type="password" name="password" id="passwordInput" maxlength="4" placeholder="숫자 4자리" disabled>
+                            <small style="color:gray;">※ 글을 열람할 때 필요한 비밀번호입니다.</small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>파일</th>
+                        <td>
+                            <input type="file" name="file1"/><br>
+                            <input type="file" name="file2"/><br>
+                            <p>
+                                최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                        <td>
+                            <textarea name="content"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <input type="submit" value="작성완료" class="btn btnComplete" style="margin: 30px 0; float: right;"/>
+                    <a th:href="@{/Community/{cate}(cate=${cate})}" class="btn btnCancel" style="margin: 30px 10px; float: right;">취소</a>
+                </div>
+            </form>
+        </section>
+    </main>
+    <th:block th:include="/common/__footer"/>
+</div>
+</body>
+</html>

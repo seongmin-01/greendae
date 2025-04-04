@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3조 - 그린대학교</title>
+  <th:block th:include="/_headerLink"/>
+  <link rel="stylesheet" th:href="@{/css/user/resultId.css}">
+</head>
+<body>
+<div id="wrapper">
+  <th:block th:include="/common/__header"/>
+
+  <div class="homebar">
+    <article class="inline">
+      <a th:href="@{/}"><img src="/images/ico-home.png" alt="homeico"></a>
+      <img src="/images/bg-path-arrow.png" alt="arrowright">
+      <a th:href="@{/user/login.html}">회원</a>
+      <img src="/images/bg-path-arrow.png" alt="arrowright">
+      <a th:href="@{/user/findId}">아이디 찾기</a>
+    </article>
+  </div>
+
+  <main>
+    <article class="content">
+      <div class="form-header">
+        <h1>아이디 찾기 결과</h1>
+        <h3>회원님의 아이디 찾기 결과입니다.</h3>
+      </div>
+
+      <div class="box">
+        <p>
+          <span th:text="${resultId}" th:if="${resultId != null}"></span>
+          <span th:text="${error}" th:if="${error != null}"></span>
+        </p>
+      </div>
+
+      <a th:href="@{/user/login}" class="login-link">로그인하기</a>
+
+    </article>
+  </main>
+
+  <th:block th:include="/common/__footer"/>
+</div>
+</body>
+</html>

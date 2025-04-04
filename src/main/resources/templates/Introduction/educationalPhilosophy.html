@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" href="/css/introduction.css">
+</head>
+<!---------------------헤더------------------------------->
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/__header"/>
+        
+        <div class="homebar">
+            <article class="inline">
+                <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/Introduction/presidentMessage}">대학소개</a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/Introduction/educationalPhilosophy}">교육이념</a>
+            </article>
+        </div>
+
+<!---------------------사이드바------------------------------>
+    <main>
+        
+        <section class="sidebar">
+            <aside>
+                <h2>대학소개</h2>
+                <ul class="menu">
+                    <li><a th:href="@{/Introduction/presidentMessage}" >총장 인사말</a></li>
+                    <li><a th:href="@{/Introduction/educationalPhilosophy}" class="on" >교육이념</a></li>
+                    <li><a th:href="@{/Introduction/history}" >연혁</a></li>
+                    <li><a th:href="@{/Introduction/organizationalChart}" >조직도</a></li>
+                    <li><a th:href="@{/Introduction/directions}">오시는 길</a></li>
+
+                </ul>
+            </aside>
+        </section>
+        
+    <!-----------------------본문---------------------------------->
+        <section class="education-ideology">
+            <h1>교육이념</h1>
+            <div class="ideology-container">
+                <div class="ideology-item red">
+                    <p>진리</p>
+                </div>
+                <div class="ideology-item blue">
+                    <p>자유</p>
+                </div>
+                <div class="ideology-item green">
+                    <p>봉사</p>
+                </div>
+            </div>
+       
+
+            <section class="education-values">
+                <h3>인재상</h3>
+                <p class="highlight">창조적 지성과 바른 인성을 겸비한 <span class="emphasized">그린인</span></p>
+            </section>
+
+            <section class="education-purpose">
+                <h3>교육목적</h3>
+                <p>진리, 자유, 봉사의 정신으로 창조적 지성과 바른 인성을 겸비한 인재를 양성한다.</p>
+            </section>
+
+            <section class="education-goals">
+                <h3>교육목표</h3>
+                <div class="goal-container">
+                    <div class="goal red">
+                        <p>창의적 탐구를 통한 지적 능력 계발</p>
+                    </div>
+                    <div class="goal blue">
+                        <p>자유롭고 혁신적인 도전 정신 배양</p>
+                    </div>
+                    <div class="goal green">
+                        <p>바른 인성에 기반한 공동체 의식 함양</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+    </main>
+<!--------------------------푸터-------------------------------->
+        <th:block th:include="/common/__footer"/>
+    </div>
+</body>
+</html>

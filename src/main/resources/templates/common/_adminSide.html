@@ -1,0 +1,37 @@
+<aside>
+    <div class="setting">
+        <h4><img src="/images/ico-admin-setting.png" alt="setting">환경설정</h4>
+        <a href="">· 기본환경정보</a><br>
+        <a href="">· 약관관리</a>
+    </div>
+    <div class="management">
+        <h4><img src="/images/ico-admin-academic.png" alt="academic">학사운영</h4>
+        <a th:href="@{/Management/ManageEducation}">· 교육 운영 현황</a><br>
+        <a href="">· 학년별 학생 현황</a><br>
+        <a href="">· 학과별 학생 현황</a><br>
+        <a th:href="@{/Management/ManageCourseList}">· 강의 목록</a><br>
+        <a th:href="@{/Management/ManageRegister}">· 강의 등록</a><br>
+        <a th:href="@{/Management/ManageInClass}">· 수강 현황</a>
+    </div>
+    <div class="personnelmanage">
+        <h4><img src="/images/ico-admin-persons.png" alt="persons">인사관리</h4>
+        <a th:href="@{/Management/StdList}">· 학생 목록 및 등록</a><br>
+        <a th:href="@{/Management/ManageProfessorList}">· 교수 목록 및 등록</a><br>
+        <a href="">· 임직원 목록 및 등록</a>
+    </div>
+    <div class="department">
+        <h4><img src="/images/ico-admin-college.png" alt="college">대학 및 학과</h4>
+        <a th:href="@{/Management/ManagerDptList}">· 대학 및 학과 목록</a><br>
+        <a th:href="@{/Management/ManageDepartRegist}">· 대학 및 학과 등록</a>
+    </div>
+    <div class="board">
+        <h4><img src="/images/ico-admin-board.png" alt="board">게시판관리</h4>
+        <a th:href="@{/Admission/notice}">· 입학안내 공지사항</a><br>
+        <a th:href="@{/Bachelor/BacNotice}">· 학사안내 공지사항</a><br>
+        <a th:href="@{/Community/notice}">· 커뮤니티 공지사항</a><br>
+        <a th:href="@{/Admission/admissionCounseling}">· 입학상담</a><br>
+        <a th:href="@{/Community/qa}">· 질문 및 답변</a><br>
+        <a th:href="@{/life/meal}">· 식단안내</a><br>
+        <a th:href="@{/Community/resource}">· 자료실</a>
+    </div>
+</aside>

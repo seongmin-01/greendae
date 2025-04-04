@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/user/register.css}">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script th:src="@{/js/user/postcode.js}"></script>
+    <script th:src="@{/js/user/validation.js}"></script>
+</head>
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+    <div class="homebar">
+        <article class="inline">
+            <a th:href="@{/}"><img src="/images/ico-home.png" alt="homeico"></a>
+            <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+            <a th:href="@{/user/login}">회원</a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a th:href="@{/user/register}">회원가입</a>
+        </article>
+    </div>
+    <main>
+        <div class="textarea">
+            <h4>회원가입</h4>
+            <p>반갑습니다 그린대학교입니다. 회원가입 후 더 많은 정보를 이용하세요<br>
+                대학구성원(학생, 교직원)은 회원가입 없이 학번, 교번(사번) 아이디를 사용하여 로그인할 수 있습니다.</p>
+        </div>
+        <form name="formRegister" th:action="@{/user/register}" method="post">
+            <div class="termsarea">
+                <table>
+                    <tr>
+                        <th>아이디 <p class="star">*</p></th>
+                        <td>
+                            <input class="register" type="text" name="id" placeholder="아이디 입력"/>
+                            <button id="btnCheckUid" type="button">중복확인</button>
+                            <p class="ex">영문·숫자 조합 4~10자 이내</p>
+                            <span class="uidResult"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호<p class="star">*</p></th>
+                        <td><input class="register" type="password" name="password" placeholder="비밀번호 입력"/>
+                            <p class="ex">비밀번호는 8-16자리 이내, 영문·숫자·특수문자 조합</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호 확인<p class="star">*</p></th>
+                        <td>
+                            <input class="register" type="password" name="password2" placeholder="비밀번호 입력 확인"/>
+                            <span class="passResult"></span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>이름<p class="star">*</p></th>
+                        <td>
+                            <input class="register" type="text" name="name" placeholder="이름 입력"/>
+                            <span class="nameResult"></span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>휴대폰<p class="star">*</p></th>
+                        <td>
+                            <input class="register" type="text" name="phone" placeholder="휴대폰 입력"/>
+                            <span class="hpResult"></span>
+                        </td>
+                    </tr>
+                    <tr class="email-row">
+                        <th>이메일<p class="star">*</p></th>
+                        <td class="email-td">
+                            <!-- 1줄: 이메일 입력 + 인증번호 받기 + 결과메시지 -->
+                            <div class="emailtop">
+                                <input class="register" type="email" name="email" placeholder="이메일 입력"/>
+                                <button id="btnSendEmail" type="button">인증번호 받기</button>
+                                <span class="emailResult"></span>
+                            </div>
+
+                            <!-- 2줄: 인증번호 입력 + 확인 버튼 -->
+                            <div class="auth">
+                                <input class="register" type="text" name="auth" placeholder="인증번호 입력"/>
+                                <button id="btnAuthEmail" type="button">확인</button>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="address-row">
+                        <th>주소<p class="star">*</p></th>
+                        <td>
+                            <div class="address-container">
+                                <button type="button" id="zip"  class="zipcode-btn" onclick="postcode()">우편번호</button>
+                                <input class="register zip" id="addr1" type="text" name="addr1" placeholder="기본주소 선택"/>
+                                <input class="register zip" id="addr2" type="text" name="addr2" placeholder="상세주소 입력"/>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p><p class="star">*</p> 필수입력 </p>
+            </div>
+            <div class="pagebtn">
+                <div class="cancle">
+                    <a  th:href="@{/user/login}">취소</a>
+                </div>
+                <input id="registerbtn" type="submit" value="회원가입"/>
+            </div>
+        </form>
+    </main>
+    <th:block th:include="/common/__footer"/>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 12px "Noto Sans Korean", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    }
+    
+    ul,
+    ol {
+    list-style: none;
+    }
+    
+    a {
+    text-decoration: none;
+    color: #111;
+    }
+    
+    input,
+    textarea {
+    outline: none;
+    }
+    
+    #wrapper {
+    max-width: 1920px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    }
+    button {
+        all: unset;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+/* ------------------------------------------------------------------ */    
+
+ /*메인*/
+ main {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+}
+main aside {
+    width: 270px;
+    height: auto;
+    flex-shrink : 0;
+    padding: 25px 30px;
+    background-color: #dadada;
+    box-sizing: border-box;
+}
+main aside img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+main aside h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+main aside a {
+    font-size: 14px;
+    margin-left: 25px;
+    line-height: 30px;
+}
+main aside div {
+    margin-bottom: 20px;
+}
+
+main .managemain {
+    width: 1130px;
+    height: auto;
+    flex-grow: 1;
+    padding: 20px 0 20px 20px;
+}
+main .managemain .managemaintop {
+    width: 100%;
+    height: auto;
+    display: flex;
+    border-bottom: 1px solid #C0C0C0;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+main .managemain .managemaintop h4 {
+    font-size: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+main .managemain .managemaintop h3 {
+    font-size: 14px;
+    display: flex;
+    margin-left: auto;
+}
+main .managemain .managemaintop h3 p {
+    font-size: 14px;
+    color: #333333;
+}
+
+/* ------------------------------------------------------------------ */    
+
+.table-head {
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 0;
+    font-size: 18px;
+    color: #145074;
+    margin-bottom: 10px;
+}
+
+.table-head > img {
+    margin-right: 5px;
+}
+
+
+input {
+   border: 1px solid #959595
+}
+/* ------------------------------------------------------------------ */
+
+.table-1 {
+    width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    height: 304px;
+}
+
+.td-hd {
+    width: 163px;
+    text-align: center;
+    background: #FAFAFA;
+}
+
+td {
+    border: 1px solid #E5E5E5;
+}
+
+.img {
+    width: 163px;
+    text-align: center;
+}
+
+.img > img {
+    width: 100px;
+    height: 100px;
+}
+
+.td-bd {
+    padding: 10px;
+}
+
+.td-bd > p {
+    color: red;
+}
+
+.td-bd > input {
+    padding-left: 5px;
+    height: 33px;
+}
+
+.td-bd > label {
+    text-align: center;
+    margin-right: 10px;
+}
+
+.addr {
+    width: 400px;
+    margin-top: 2px;
+}
+
+.addr .addrsearch {
+    font-size: 13px;
+}
+
+.email {
+    width: 142px;
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+.table-2 {
+    width: 100%;
+    height: 201px;
+    border-collapse: collapse;
+}
+
+.td-hd2 {
+    width: 163px;
+    text-align: center;
+    background: #FAFAFA;
+}
+
+
+.td-bd2 {
+    padding-left: 7px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+.dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('/static/images/btn-sel-open01.png') no-repeat right center;
+    background-position: calc(100% - 10px) center;
+    width: 150px;
+    padding: 7px;
+    margin-right: 5px;
+    height: 35px;
+    border: 1px solid #959595;
+    color: #666666;
+    font-size: 13px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.form-btn {
+    width: 100px;
+    height: 33px;
+    background: #1A528E;
+    border: 1px solid #08305A;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    margin-top: 20px;
+    float: right;
+}
+
+
+

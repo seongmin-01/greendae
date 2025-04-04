@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3조 - 그린대학교</title>
+  <link rel="stylesheet" th:href="@{/css/_header.css}" />
+  <link rel="stylesheet" th:href="@{/css/_footer.css}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" th:href="@{/css/main.css}" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+      <th:block th:include="/common/__header"/>
+
+    <main>
+
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide swiper-slide1">
+            <p class="text-sub">IT기술로 세상을 변화시키는 인재를 양성</p>
+            <p class="text-main">그린대학교 컴퓨터과학과</p>
+            <p class="text-subsub">
+              급변하는 컴퓨터 기술의 발전에 선도적으로 참여하고 컴퓨터의
+              활용을 통하여 미래를 만들어 나갈 수 있는 인력을 배양
+            </p>
+            <a href="#" class="baro">학과소개 바로가기
+              <img th:src="@{/images/bg-link-arr.png}" alt="학과소개 바로가기" class="baro-icon" /></a>
+          </div>
+          <div class="swiper-slide swiper-slide2">
+            <p class="text-sub">IT기술로 세상을 변화시키는 인재를 양성</p>
+            <p class="text-main">그린대학교 컴퓨터과학과</p>
+            <p class="text-subsub">
+              급변하는 컴퓨터 기술의 발전에 선도적으로 참여하고 컴퓨터의
+              활용을 통하여 미래를 만들어 나갈 수 있는 인력을 배양
+            </p>
+            <a href="#" class="baro">학과소개 바로가기
+              <img th:src="@{/images/bg-link-arr.png}" alt="학과소개 바로가기" class="baro-icon" /></a>
+          </div>
+          <div class="swiper-slide swiper-slide3">
+            <p class="text-sub">IT기술로 세상을 변화시키는 인재를 양성</p>
+            <p class="text-main">그린대학교 컴퓨터과학과</p>
+            <p class="text-subsub">
+              급변하는 컴퓨터 기술의 발전에 선도적으로 참여하고 컴퓨터의
+              활용을 통하여 미래를 만들어 나갈 수 있는 인력을 배양
+            </p>
+            <a href="#" class="baro">학과소개 바로가기
+              <img th:src="@{/images/bg-link-arr.png}" alt="학과소개 바로가기" class="baro-icon" /></a>
+          </div>
+        </div>
+        <div class="swiperbtn swiper-pagination"></div>
+        <div class="swiperbtn swiper-button-prev"></div>
+        <div class="swiperbtn swiper-button-next"></div>
+      </div>
+      <div class="main-inner">
+        <div class="content-container">
+          <div class="content left">
+            <div class="content-header left-header">
+              <span class="content-title">학사안내</span>
+              <a href="#">
+                <img th:src="@{/images/bg-viewmore01.png}" alt="더보기" />
+              </a>
+            </div>
+            <ul>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">교과목 폐지 및 신설 안내</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">2019-2학기 진로취업 프로그램 설계를 위한 학생 대상...</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">제8회 KNDA 학술논문상 공모</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">대학 진로취업지원 현황 조사 안내</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">[진로취업특강] 유망직무 전문가 초청 특강, 여대생 커...</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+            </ul>
+          </div>
+          <div class="content right">
+            <div class="content-header right-header">
+              <span class="content-title">공지사항</span>
+              <a href="#">
+                <img th:src="@{/images/bg-viewmore02.png}" alt="더보기" />
+              </a>
+            </div>
+            <ul>
+              <li class="content-posts">
+                <a href="#" class="post-title right-title">교과목 폐지 및 신설 안내</a><span
+                  class="content-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title right-title">2019-2학기 진로취업 프로그램 설계를 위한 학생 대상...</a><span
+                  class="content-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title right-title">제8회 KNDA 학술논문상 공모</a><span
+                  class="content-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title right-title">대학 진로취업지원 현황 조사 안내</a><span
+                  class="content-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title right-title">[진로취업특강] 유망직무 전문가 초청 특강, 여대생 커...</a><span
+                  class="content-date">2025-03-08</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-header">
+            <span class="content-title">PHOTO GALLERY</span>
+            <a href="#">
+              <img th:src="@{/images/bg-viewmore01.png}" alt="더보기" />
+            </a>
+          </div>
+          <div class="frame-container">
+            <div class="frame">
+              <a thref="#">
+                <img th:src="@{/images/gallary_sample1.jpg}" alt="샘플이미지" class="photos" />
+                <div class="frame-title">글로벌 명문대학 그린대학교</div>
+              </a>
+            </div>
+            <div class="frame">
+              <a href="#">
+                <img th:src="@{/images/gallary_sample2.jpg}" alt="샘플이미지" class="photos" />
+                <div class="frame-title">글로벌 명문대학 그린대학교</div>
+              </a>
+            </div>
+            <div class="frame">
+              <a href="#">
+                <img th:src="@{/images/gallary_sample3.jpg}" alt="샘플이미지" class="photos" />
+                <div class="frame-title">글로벌 명문대학 그린대학교</div>
+              </a>
+            </div>
+            <div class="frame">
+              <a href="#">
+                <img th:src="@{/images/gallary_sample4.png}" alt="샘플이미지" class="photos" />
+                <div class="frame-title">글로벌 명문대학 그린대학교</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="club">
+        <div class="club-container">
+          <div class="club-text">
+            <h3>동아리 HELPER</h3>
+            <p>
+              공무원 시험 준비반을 운용함으로써 정치행정학과에서 공무원 시험을
+              준비하는 학생들에게<br />
+              인터넷 강의, 교재를 제공하고 스터디 그룹의 활동을 도와주고
+              있습니다.
+            </p>
+          </div>
+          <a href="#" class="club-detail">자세히 보기</a>
+        </div>
+      </div>
+      <div class="newslink">
+        <div class="content-container">
+          <div class="content">
+            <div class="content-header left-header">
+              <span class="content-title">뉴스 및 칼럼</span>
+              <a href="#">
+                <img th:src="@{/images/bg-viewmore01.png}" alt="더보기" />
+              </a>
+            </div>
+            <ul>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">교과목 폐지 및 신설 안내 <img th:src="@{/images/ico-new01.gif}"
+                    class="ico-new" /></a><span class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">2019-2학기 진로취업 프로그램 설계를 위한 학생 대상...<img
+                    th:src="@{/images/ico-new01.gif}" class="ico-new" /></a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">제8회 KNDA 학술논문상 공모</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">대학 진로취업지원 현황 조사 안내</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+              <li class="content-posts">
+                <a href="#" class="post-title left-title">[진로취업특강] 유망직무 전문가 초청 특강, 여대생 커...</a><span
+                  class="content-date left-date">2025-03-08</span>
+              </li>
+            </ul>
+          </div>
+          <div class="content">
+            <div class="content-header left-header smartlink">
+              <span class="content-title">SMART LINK</span>
+            </div>
+            <ul>
+              <li><a th:href="@{Admission/notice}">
+                  <img th:src="@{/images/smartlink-01.png}" />
+                  입학안내
+                </a></li>
+              <li><a th:href="@{Bachelor/BacSchedule}">
+                  <img th:src="@{/images/smartlink-02.png}" />
+                  학사일정
+                </a></li>
+              <li><a th:href="@{life/council}">
+                  <img th:src="@{/images/smartlink-03.png}" />
+                  학생회
+                </a></li>
+              <li><a href="#">
+                  <img th:src="@{/images/smartlink-04.png}" />
+                  교과과정
+                </a></li>
+              <li><a href="#">
+                  <img th:src="@{/images/smartlink-05.png}" />
+                  취업안내
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+      <th:block th:include="/common/__footer"/>
+  </div>
+</body>
+
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".swiper", {
+      loop: false, // 무한 루프
+      autoplay: { delay: 5000 }, // 자동 재생
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>

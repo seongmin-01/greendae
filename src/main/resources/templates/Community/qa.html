@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+이름 : 김소현
+내용 : 커뮤니티 질문과 답변
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3조 - 그린대학교</title>
+        <link rel="stylesheet" href="/css/_header.css">
+        <link rel="stylesheet" href="/css/_footer.css">
+        <link rel="stylesheet" href="/css/homebar.css">
+        <link rel="stylesheet" href="/css/Community/qa.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const titles = document.querySelectorAll('.title');
+
+                titles.forEach(function (title) {
+                    title.addEventListener('click', function (e) {
+                        const isLocked = title.getAttribute('data-locked') === 'true';
+                        const no = title.getAttribute('data-no');
+                        const url = title.getAttribute('href');
+
+                        // 잠금이 아니면 그대로 진행
+                        if (!isLocked) return;
+
+                        e.preventDefault(); // 기본 이동 막기
+
+                        const inputPassword = prompt("비밀번호를 입력하세요 (숫자 4자리):");
+                        if (!inputPassword || inputPassword.length !== 4) {
+                            alert("비밀번호는 숫자 4자리여야 합니다.");
+                            return;
+                        }
+
+                        fetch('/Community/password-check', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="_csrf"]')?.getAttribute('content')
+                            },
+                            body: JSON.stringify({ no, password: inputPassword })
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.success) {
+                                    window.location.href = url; // 비밀번호 맞으면 이동
+                                } else {
+                                    alert("비밀번호가 틀렸습니다.");
+                                }
+                            })
+                            .catch(err => {
+                                console.error(err);
+                                alert("서버 오류가 발생했습니다.");
+                            });
+                    });
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <th:block th:include="/common/__header"/>
+            <div class="homebar">
+                <article class="inline">
+                    <a href="/main"><img src="/images/ico-home.png" alt="homeico"></a>
+                    <img src="/images/bg-path-arrow.png" alt="arrowright">
+                    <a href="/Community/qa">커뮤니티</a>
+                    <img src="/images/bg-path-arrow.png" alt="arrowright">
+                    <a href="/Community/qa">질문과 답변</a>
+                </article>
+            </div>
+            <main>
+                <article class="side">
+                    <h4>커뮤니티</h4>
+                        <ul>
+                            <li><a href="/Community/notice">공지사항</a></li>
+                            <li><a href="/Community/news">뉴스 및 칼럼</a></li>
+                            <li><a href="/Community/job">취업정보</a></li>
+                            <li><a href="/Community/free">자유게시판</a></li>
+                            <li class="on"><a href="/Community/qa" class="on">질문과 답변</a></li>
+                            <li><a href="/Community/resource">자료실</a></li>
+                        </ul>
+                </article>
+                <article class="notice">
+                    <div class="noticetop">
+                        <h4>질문과 답변</h4>
+                    </div>
+                    <form th:action="@{/Community/searchQa}" class="search">
+                        <select class="dropdown" name="searchType">
+                            <option value="all">전체</option>
+                            <option value="title" th:selected="${pageResponseDTO.searchType == 'title'}">제목</option>
+                            <option value="content" th:selected="${pageResponseDTO.searchType == 'content'}">내용</option>
+                            <option value="writer" th:selected="${pageResponseDTO.searchType == 'writer'}">작성자</option>
+                        </select>
+                        <input type="text" name="keyword" placeholder="검색어를 입력해 주세요">
+                        <button class="searchbtn">검색</button>
+                    </form>
+                    <div class="noticemain">
+                        <table>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>작성일</th>
+                                <th>상태</th>
+                            </tr>
+                            <th:block th:each="community, i : ${pageResponseDTO.dtoList}">
+                                <tr>
+                                    <td>[[${pageResponseDTO.startNo - i.index}]]</td>
+                                    <td>
+                                        <a th:href="@{/Community/view4(no=${community.no}, cate=${community.cate})}"
+                                           class="title"
+                                           th:attr="data-no=${community.no}, data-locked=${community.locked}">
+                                            <span th:if="${community.locked}">
+                                                <img src="/images/ico-lock.png" alt="잠금" style="width:14px; height:14px; vertical-align:middle; margin-right:4px;">
+                                            </span>
+                                            [[${community.title}]]&#91;[[${community.comment}]]&#93;
+                                        </a>
+
+                                    </td>
+                                    <td>[[${community.name}]]</td>
+                                    <td>[[${community.wdate}]]</td>
+                                    <td th:if="${community != null and community.status == 'wait'}" class="wait">답변대기</td>
+                                    <td th:if="${community != null and community.status == 'resp'}" class="done">답변완료</td>
+                                </tr>
+                                <tr th:if="${community.status == 'resp'}" class="manager">
+                                    <td></td>
+                                    <td>
+                                        <img src="/images/ico-reply.png" alt="iconew">
+                                        RE : [답변] [[${community.title}]]
+                                    </td>
+                                    <td>[[${community.name}]]</td>
+                                    <td>[[${community.wdate}]]</td>
+                                    <td class="done">답변완료</td>
+                                </tr>
+                            </th:block>
+                        </table>
+
+                        <a th:href="@{/Community/write4(cate=${pageResponseDTO.cate})}" class="write">글쓰기</a>
+
+                        <article class="pagebtn">
+                            <th:block th:if="${pageResponseDTO.prev}">
+                                <a th:href="@{/Community/qa(pg=${pageResponseDTO.start-1})}" class="prev">이전</a>
+                            </th:block>
+
+                            <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+                                <a th:href="@{/Community/qa(pg=${num})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
+                            </th:block>
+
+                            <th:block th:if="${pageResponseDTO.next}">
+                                <a th:href="@{/Community/qa(pg=${pageResponseDTO.end+1})}" class="next">다음</a>
+                            </th:block>
+                        </article>
+                    </div>
+                </article>
+            </main>
+            <th:block th:include="/common/__footer"/>
+        </div>
+    </body>
+</html>

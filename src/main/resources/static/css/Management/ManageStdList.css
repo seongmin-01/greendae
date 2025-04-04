@@ -1,0 +1,190 @@
+    /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+    /*메인*/
+    main {
+        width: 100%;
+        max-width: 1400px;
+        height: auto;
+        display: flex;
+        margin: 0 auto;
+    }
+    main aside {
+        flex-basis: 270px;
+        flex-grow: 0;
+        height: auto;
+        padding: 25px 30px;
+        background-color: #dadada;
+    }
+    main aside img {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 3px;
+        right: 5px;
+    }
+    main aside h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
+    main aside a {
+        font-size: 14px;
+        margin-left: 25px;
+        line-height: 30px;
+    }
+    main aside div {
+        margin-bottom: 20px;
+    }
+
+    main .managemain {
+        width: 100%;
+        max-width: 1130px;
+        height: auto;
+        flex-grow: 1;
+        padding: 20px 0 20px 20px;
+    }
+    main .managemain .managemaintop {
+        width: 100%;
+        height: auto;
+        display: flex;
+        border-bottom: 1px solid #C0C0C0;
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+    main .managemain .managemaintop h4 {
+        font-size: 20px;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    main .managemain .managemaintop h3 {
+        font-size: 14px;
+        display: flex;
+        margin-left: auto;
+    }
+    main .managemain .managemaintop h3 p {
+        font-size: 14px;
+        color: #333333;
+    }
+
+
+    /* -------------------------------------------------------- */
+     /*search*/
+     main .search {
+        float: right;
+        display: flex;
+        margin-bottom: 14.52px;
+        
+    }
+    main .search .dropdown {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 150px;
+        padding: 10px;
+        margin-right: 5px;
+        border: 1px solid #DEDEDE;
+        color: #666666;
+        font-size: 15px;
+    }
+    main .search input {
+        padding: 10px;
+        width: 237px;
+        border: 1px solid #DEDEDE;
+        color: #666666;
+        font-size: 15px;
+    }
+    main .search .searchbtn {
+        padding: 10px 20px;
+        background-color: #1a528e;
+        border: 1px solid #1a528e;
+    }
+    main .search .searchbtn a {
+        color: white;
+        font-size: 15px;
+    }
+
+    /* -------------------------------------------------------- */
+    main .managemain div h4 {
+        font-size: 18px;
+        color: #145074;
+        margin-bottom: 8px;
+    }
+    main .managemain div img {
+        margin-right: 5px;
+    }
+    main .managemain div table {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        border-top: 1px solid #A3A3A3;
+        border-collapse: collapse;
+        margin-bottom: 25px;
+    }
+    main .managemain div table th {
+        padding: 13px;
+        font-size: 13px;
+        color: #333333;
+        border-bottom: 1px solid #A3A3A3;
+        background-color: #FAFAFA;
+    }
+    main .managemain div table td {
+        padding: 13px;
+        font-size: 13px;
+        font-weight: 350;
+        color: #333333;
+        border-bottom: 1px solid #cccccc;
+    }
+    main .managemain div table tr .ing {
+        color: #008000;
+    }
+    main .managemain div table tr .out {
+        color: #FF0000;
+    }
+    main .managemain div table tr .fire {
+        color: #FF0000;
+    }
+    main .managemain div table tr .rest {
+        color: #FFA500;
+    }
+    main .managemain div table tr .grad {
+        color: #0000FF;
+    }
+
+
+
+    .pagebtn {
+        text-align: center;
+        justify-content: center;
+    }
+    .pagebtn a {
+        padding: 4px 10px 5px 10px;
+        font-size: 15px;
+        border: 1px solid #DEDEDE;
+        box-sizing: border-box;
+        color: #888;
+    }
+
+    .pagebtn-1 {
+        margin-right: 8px;
+    }
+
+    .pagebtn-2 {
+        margin-left: 8px;
+    }
+
+    .pagebtn a:hover {
+        color: #fff;
+        background-color: #1a528e;
+    }
+    .pagebtn button {
+        padding: 6px 33px;
+        background-color: #1A528E;
+        border: 1px solid #08305A;
+        box-sizing: border-box;
+        color: white;
+        font-size: 13px;
+        margin-left: auto;
+        display: block;
+        position: relative;
+        bottom: 27px;
+    }

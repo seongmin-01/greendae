@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/admission.css}">
+
+</head>
+<!---------------------헤더------------------------------->
+<body>
+<div id="wrapper">
+    <th:block th:include="/common/__header"/>
+
+    <div class="homebar">
+        <article class="inline">
+            <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a th:href="@{/Admission/notice}">입학안내</a>
+            <img src="/images/bg-path-arrow.png" alt="arrowright">
+            <a th:href="@{/Admission/notice}">수시모집</a>
+        </article>
+    </div>
+
+
+    <!---------------------사이드바------------------------------>
+    <main>
+        <article class="side">
+            <h2>입학안내</h2>
+            <ul>
+                <li style="background-color: #3F97F6;"><a th:href="@{/Admission/notice}" class="on">공지사항</a></li>
+                <li><a th:href="@{/Admission/earlyAdmission}" >수시모집</a></li>
+                <li><a th:href="@{/Admission/regularAdmission}" >정시모집</a></li>
+                <li><a th:href="@{/Admission/transferAdmission}" >편입학</a></li>
+                <li><a th:href="@{/Admission/admissionCounseling}" >입학상담</a></li>
+            </ul>
+        </article>
+        <!---------------------본문------------------------------>
+        <article class="notice">
+            <div class="noticetop">
+                <h4>공지사항</h4>
+            </div>
+            <div class="search">
+                <select class="dropdown">
+                    <option>전체</option>
+                    <option>제목</option>
+                    <option>작성자</option>
+                    <option>내용</option>
+                </select>
+                <input type="text" value="검색어를 입력해 주세요">
+                <div class="searchbtn">
+                    <a href="">검색</a>
+                </div>
+            </div>
+
+            <div class="noticemain">
+                <table>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회</th>
+                    </tr>
+                    <tr th:each="notice : ${noticeDTOList}">
+                        <td th:text="${notice.no}"></td>
+                        <td>
+                            <a th:href="@{/Admission/view(no=${notice.no})}" th:text="${notice.title}"></a>
+                        </td>
+                        </td>
+                        <td th:text="${notice.writer}"></td>
+                        <td th:text="${notice.wdate}"></td>
+                        <td th:text="${notice.hit}"></td>
+                    </tr>
+                </table>
+                <article class="pagebtn">
+                    <a href=""><img src="/images/btn-first-page.png" alt="firstarr"></a>
+                    <a href=""><img src="/images/btn-prev-page.png" alt="firstarr"></a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href=""><img src="/images/btn-next-page.png" alt="firstarr"></a>
+                    <a href=""><img src="/images/btn-last-page.png" alt="firstarr"></a>
+                </article>
+            </div>
+        </article>
+
+    </main>
+    <!--------------------------푸터-------------------------------->
+    <th:block th:include="/common/__footer"/>
+</div>
+</body>
+</html>

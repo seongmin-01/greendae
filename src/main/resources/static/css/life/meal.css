@@ -1,0 +1,153 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+}
+main {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 792.5px;
+    margin: 0 auto;
+    display: flex;          /* 추가: Flexbox 사용 */
+    align-items: flex-start; /* 추가: 상단 정렬 */
+    gap: 20px;              /* 선택사항: 요소들 사이에 간격 추가 */
+}
+
+
+aside {
+    width: 210px;
+    height: 302px;
+}
+
+aside > p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.list-hadding {
+    font-size: 32px;
+    color: #222222;
+}
+
+.list {
+    width: 210px;
+    height: 60px;
+    margin-top: 15px;
+
+}
+
+.list > li:nth-child(1) {
+    border-top: 2px solid #222222;
+}
+
+.list > li {
+    margin-top: 2px;
+    padding-left: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 60px;
+}
+
+.list > li:hover {
+    background: #3F97F6;
+}
+
+.list > li:hover a {
+    color: white;
+}
+
+
+
+section > span {
+    display: block;
+    max-width: 930px;
+    height: 56px;
+    border-bottom: 2px solid #222;
+    color: #333;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.meal_date {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin: 30px 0 30px 220px;
+}
+
+.meal_date > h2 {
+    font-weight: 500;
+    font-size: 32px;
+    color: #084A87;
+}
+
+.meal_date > img {
+    width: 12px;
+    height: 30px;
+}
+
+.meal_table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.meal_table td, th {
+    border: 1px solid #E6EDF3;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.meal_table th {
+    height: 34px;
+    background-color: #084A87;
+    color: #fff;
+}
+
+.meal_table td {
+    width: 130px;
+    height: 101px;
+}
+
+.meal_table tr:nth-of-type(3) td {
+     vertical-align: middle;
+}
+
+.meal_table tr:nth-of-type(3) > td:first-child {vertical-align: middle;}
+.meal_table tr:nth-of-type(3) > td:last-child {vertical-align: middle;}
+
+
+.meal_table td > div {
+    display: inline-block;
+    width: 90px;
+    height: 24px;
+    margin: 5px 0;
+    line-height: 24px;
+    font-size: 14px;
+    border: 1px solid #068368;
+    color: #068368;
+}
+.price-box {
+    display: inline-block;
+    width: 90px;
+    height: 24px;
+    margin: 5px 0;
+    line-height: 24px;
+    font-size: 14px;
+    border: 1px solid #068368;
+    color: #068368;
+    text-align: center;
+}
+
+
+.greeting {
+    margin-top: 15px;
+    color: #666;
+    font-size: 16px;
+}
+

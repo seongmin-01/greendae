@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3조 - 그린대학교</title>
+        <th:block th:include="/_headerLink"/>
+        <link rel="stylesheet" href="/css/support/curriculumList.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <th:block th:include="/common/__header"/>
+            <div class="homebar">
+                <article class="inline">
+                    <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/Support/CourseRegister}">학생지원</a>
+                    <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                    <a th:href="@{/Support/curriculumList}">나의교과과정</a>
+
+                </article>
+            </div>
+            <main>
+                <aside class="side">
+                    <p class="list-hadding">학생지원</p>
+                    <ul class="list">
+                        <li><a th:href="@{/Support/CourseRegister}">수강신청</a></li>
+                        <li><a th:href="@{/Support/courseList}">수강신청내역</a></li>
+                        <li style="background-color: #3F97F6;"><a style="color: white;" th:href="@{/Support/curriculumList}">나의교과과정</a></li>
+                        <li><a th:href="@{/Support/GradeList}">성적조회</a></li>
+                        <li><a th:href="@{/Support/academicList}">학적</a></li>
+
+                    </ul>
+                </aside>
+                <article class="course">
+                    <div class="coursetop">
+                        <p>나의교과과정</p>
+                    </div>
+                    <div class="search">
+                        <h4><img src="/images/bullet-h4.png" alt="h4">  공통과목(전공)</h4>
+                    </div>
+                    <div class="coursemain">
+                        <table>
+                            <tr class="table-hd">
+                                <th>수준</th>
+                                <th>코드번호</th>
+                                <th>이수구분</th>
+                                <th>교과목명</th>
+                                <th>학점</th>
+                            </tr>
+                            <tr class="table-bd">
+                                <td rowspan="6">1</td>
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>C언어</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>프로그래밍언어론</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨터과학개론</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>이산수학</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>인터넷과웹기초</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨팅사고와인공지능</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td rowspan="6">2</td>
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>자바프로그래밍</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>자료구조</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨터구조</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>선형대수</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>알고리즘</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>HTML/CSS/Javascript</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td rowspan="6">3</td>
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>웹프로그래밍</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>프로그래밍언어론</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨터과학개론</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>이산수학</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>인터넷과웹기초</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨팅사고와인공지능</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td rowspan="6">4</td>
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>C언어</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>프로그래밍언어론</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨터과학개론</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>이산수학</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>인터넷과웹기초</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨팅사고와인공지능</td>
+                                <td>3</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="search">
+                        <h4><img src="/images/bullet-h4.png" alt="h4">  선택과목(교양)</h4>
+                    </div>
+                    <div class="coursemain">
+                        <table>
+                            <tr class="table-hd">
+                                <th>수준</th>
+                                <th>코드번호</th>
+                                <th>이수구분</th>
+                                <th>교과목명</th>
+                                <th>학점</th>
+                            </tr>
+                            <tr class="table-bd">
+                                <td rowspan="6">1</td>
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>대학영어</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>세계의역사</td>
+                                <td>2</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>고전 읽기와 토론</td>
+                                <td>2</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>컴퓨팅사고와인공지능</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>인생과 철학</td>
+                                <td>2</td>
+                            </tr>
+                            <tr class="table-bd">
+                                <td>G01940</td>
+                                <td>공통</td>
+                                <td>기술과 의사 소통</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+            </main>
+            <th:block th:inclcude="/common/__footer"/>
+        </div>
+       
+    </body>
+</html>
+

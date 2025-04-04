@@ -1,0 +1,19 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<header>
+  <div class="nav">
+    <div class="navbar">
+      <div class="navbar-item"><a th:href="@{/}">HOME</a></div>
+      <div class="navbar-item"><a href="#">사이트맵</a></div>
+      <div class="navbar-item" sec:authorize="isAuthenticated()">
+        <a th:href="@{/user/logout}">로그아웃</a>
+      </div>
+    </div>
+  </div>
+  <div class="headerbar">
+    <article class="headerbarin">
+      <a th:href="@{/adminMain}"><img src="/images/admin_logo.png" alt="그린대학교"></a>
+    </article>
+  </div>
+</header>

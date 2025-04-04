@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대학원</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" href="/css/department/humanities.css">
+
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/__header"/>
+
+        <div class="homebar">
+            <article class="inline">
+                <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/department/humanities}">대학·대학원</a>
+                <img th:src="@{/images/bg-path-arrow.png}" alt="arrowright">
+                <a th:href="@{/department/teacher}">대학원</a>
+            </article>
+        </div>
+
+        <main>
+            <aside>
+                <p class="list-hadding">대학·대학원</p>
+                <ul class="list">
+                    <li><a th:href="@{/department/humanities}">인문사회대학</a></li>
+                    <li><a th:href="@{/department/naturalscience}">자연과학대학</a></li>
+                    <li><a th:href="@{/department/engineering}">공과대학</a></li>
+                    <li style="background-color: #3F97F6;"><a style="color: white;" th:href="@{/department/teacher}">사범대학</a></li>
+                    <li><a th:href="@{/department/graduateSchool}">대학원</a></li>
+                </ul>
+            </aside>
+            
+            <article>
+                <p>사범대학</p>
+
+                <div class="main-1">
+                    <img th:src="@{'/uploads/' + ${college.file}}" alt="사범대학">
+                    <div class="main-1_body">
+                        <p th:text="${college.college_eng_name}"></p>
+                        <p th:text="${college.info_title}"></p>
+                        <p th:utext="${college.info_context}"></p>
+                    </div>
+                </div>
+
+                <p class="p_img"><img th:src="@{/images/bullet-h4.png}" alt="학부 및 학과">학부 및 학과</p>
+                <table>
+                    <tr class="table-hd">
+                        <th>학과/전공</th>
+                        <th>학과장</th>
+                        <th>학과 사무실 번호</th>
+                        <th>비고</th>
+                    </tr>
+
+                    <tr class="table-bd" th:each="dept : ${departments}">
+                        <td>
+                            <a th:href="@{'/department/detail/' + ${dept.no}}"
+                               th:text="${dept.departmentName}">학과명</a>
+                            <img th:src="@{/images/ico_link.png}" th:alt="${dept.departmentName}">
+                        </td>
+                        <td th:text="${dept.proName}">학과장</td>
+                        <td th:text="${dept.dep_number}">학과 사무실 번호</td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </article>
+        </main>
+
+        <th:block th:include="/common/__footer"/>
+    </div>
+
+
+</body>
+</html>

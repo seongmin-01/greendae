@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3조 - 그린대학교</title>
+    <th:block th:include="/_headerLink"/>
+    <link rel="stylesheet" th:href="@{/css/admission.css}">
+
+</head>
+<!---------------------헤더------------------------------->
+<body>
+    <div id="wrapper">
+        <th:block th:include="/common/__header"/>
+        
+        <div class="homebar">
+            <article class="inline">
+                <a th:href="@{/}"><img th:src="@{/images/ico-home.png}" alt="homeico"></a>
+                <img src="/images/bg-path-arrow.png" alt="arrowright">
+                <a th:href="@{/Admission/notice}">입학안내</a>
+                <img src="/images/bg-path-arrow.png" alt="arrowright">
+                <a th:href="@{/Admission/earlyAdmission}">수시모집</a>
+            </article>
+        </div>
+
+<!---------------------사이드바------------------------------>
+<main>
+    <section class="sidebar">
+        <aside>
+            <h2>입학안내</h2>
+            <ul class="menu">
+                <li><a th:href="@{/Admission/notice}" >공지사항</a></li>
+                <li style="background-color: #3F97F6;"><a th:href="@{/Admission/earlyAdmission}" class="on" >수시모집</a></li>
+                <li><a th:href="@{/Admission/regularAdmission}" >정시모집</a></li>
+                <li><a th:href="@{/Admission/transferAdmission}" >편입학</a></li>
+                <li><a th:href="@{/Admission/admissionCounseling}" >입학상담</a></li>
+            </ul>
+        </aside>
+    </section>
+    
+<!-----------------------본문---------------------------------->
+<section class="content">
+    <h1>수시모집 요강</h1>
+    <div class="content-box">
+        <article>
+            <p>그린대학교 수시모집은 학생부 성적과 면접을 기반으로 진행되며, 다양한 전형이 제공됩니다.</p>
+            
+            <h2>모집 일정</h2>
+            <table>
+                <tr>
+                    <th>구분</th>
+                    <th>일정</th>
+                </tr>
+                <tr>
+                    <td>원서 접수</td>
+                    <td>9월 10일 ~ 9월 14일</td>
+                </tr>
+                <tr>
+                    <td>면접 일정</td>
+                    <td>10월 5일 ~ 10월 10일</td>
+                </tr>
+                <tr>
+                    <td>합격자 발표</td>
+                    <td>11월 2일</td>
+                </tr>
+                <tr>
+                    <td>등록 기간</td>
+                    <td>11월 10일 ~ 11월 15일</td>
+                </tr>
+            </table>
+            
+            <h2>모집 단위 및 선발 인원</h2>
+            <ul>
+                <li>컴퓨터공학과 - 70명</li>
+                <li>전자공학과 - 60명</li>
+                <li>경영학과 - 50명</li>
+                <li>디자인학과 - 40명</li>
+            </ul>
+            
+            <h2>지원 자격</h2>
+            <p>고등학교 졸업(예정)자 및 동등 이상의 학력을 가진 자</p>
+            
+            <h2>전형 방법</h2>
+            <p>학생부 성적 60% + 면접 40% 반영</p>
+        </article>
+    </div>
+</section>
+        
+    </main>
+<!--------------------------푸터-------------------------------->
+        <th:block th:include="/common/__footer"/>
+
+</div>
+</body>
+</html>
+    
